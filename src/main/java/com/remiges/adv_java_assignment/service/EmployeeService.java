@@ -1,14 +1,17 @@
 package com.remiges.adv_java_assignment.service;
 
 import java.util.Optional;
+import java.util.concurrent.TimeUnit;
 import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 import com.lowagie.text.List;
+import com.remiges.adv_java_assignment.config.RedisConfig;
 import com.remiges.adv_java_assignment.dto.EmployeeDto;
 import com.remiges.adv_java_assignment.dto.EmployeeNameIdDto;
 import com.remiges.adv_java_assignment.dto.ResponseHandllerDao;
@@ -37,6 +40,12 @@ public class EmployeeService {
 
     @Autowired
     private EmployeeShadowRepository employeeShadowRepository;
+
+    @Autowired
+    private RedisConfig redisConfig;
+
+    @Autowired
+    private RedisTemplate<String, Integer> redisTemplate; 
 
     @SuppressWarnings("null")
     // method to save employee
@@ -114,7 +123,7 @@ public class EmployeeService {
         if (filter == null)
             empList = employeeRepository.getEmpList();
         else
-            empList = employeeRepository.getEmpList("%"+filter+"%");
+            empList = employeeRepository.getEmpList("%" + filter + "%");
 
         if (empList.size() <= 0)
             throw new RunTimeException("Employee not found", HttpStatus.NOT_FOUND, filter);
@@ -177,6 +186,27 @@ public class EmployeeService {
 
         // Delete the employee
         employeeRepository.deleteById(id);
+    }
+
+    public int getEmployeeContribution(String department, String employeeId) {
+        String key = "user." + department + "." + employeeId;
+        Integer contribution = redisTemplate.opsForValue().get(key);
+        if (contribution == null) {
+            contribution = fetchEmployeeContributionFromDatabase(department, employeeId);
+            cacheEmployeeContributionInRedis(department, employeeId, contribution);
+        }
+        return contribution;
+    }
+
+    private int fetchEmployeeContributionFromDatabase(String department, String employeeId){
+        return 7;
+    }
+
+    private void cacheEmployeeContributionInRedis(String department, String employeeId, int contribution) {
+        String key = "user." + department + "." + employeeId;
+        redisTemplate.opsForValue().set(key, contribution);
+        // Set TTL for the key
+        redisTemplate.expire(key, 3, TimeUnit.MINUTES);
     }
 
 }
