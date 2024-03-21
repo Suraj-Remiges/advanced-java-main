@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+    <include resource="org/springframework/boot/logging/logback/default.xml"/>
+    <property name="LOG_FILE" value="logs/app.log"/>
+
+    <appender name="file" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>logs/myhr.log</file>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <!-- Daily rollover -->
+            <fileNamePattern>logs/myhr.%d{yyyy-MM-dd}.log</fileNamePattern>
+        </rollingPolicy>
+
+        <encoder>
+            <pattern>%date{ISO8601} %logger{36} - %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <root level="INFO">
+        <appender-ref ref="file"/>
+    </root>
+</configuration>

@@ -1,0 +1,913 @@
+2024-03-18 00:00:40,286 o.h.e.jdbc.spi.SqlExceptionHelper - SQL Error: 0, SQLState: 42P01
+2024-03-18 00:00:40,287 o.h.e.jdbc.spi.SqlExceptionHelper - ERROR: relation "employee" does not exist
+  Position: 13
+2024-03-18 00:00:40,293 o.a.c.c.C.[.[.[.[dispatcherServlet] - Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed: org.springframework.dao.InvalidDataAccessResourceUsageException: could not execute statement [ERROR: relation "employee" does not exist
+  Position: 13] [insert into employee (client_reqid,create_date,deptid_id,dob,doj,emp_id,f_name,full_name,rankid_id,reports_to,salary,update_date) values (?,?,?,?,?,?,?,?,?,?,?,?)]; SQL [insert into employee (client_reqid,create_date,deptid_id,dob,doj,emp_id,f_name,full_name,rankid_id,reports_to,salary,update_date) values (?,?,?,?,?,?,?,?,?,?,?,?)]] with root cause
+org.postgresql.util.PSQLException: ERROR: relation "employee" does not exist
+  Position: 13
+	at org.postgresql.core.v3.QueryExecutorImpl.receiveErrorResponse(QueryExecutorImpl.java:2713)
+	at org.postgresql.core.v3.QueryExecutorImpl.processResults(QueryExecutorImpl.java:2401)
+	at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:368)
+	at org.postgresql.jdbc.PgStatement.executeInternal(PgStatement.java:498)
+	at org.postgresql.jdbc.PgStatement.execute(PgStatement.java:415)
+	at org.postgresql.jdbc.PgPreparedStatement.executeWithFlags(PgPreparedStatement.java:190)
+	at org.postgresql.jdbc.PgPreparedStatement.executeUpdate(PgPreparedStatement.java:152)
+	at com.zaxxer.hikari.pool.ProxyPreparedStatement.executeUpdate(ProxyPreparedStatement.java:61)
+	at com.zaxxer.hikari.pool.HikariProxyPreparedStatement.executeUpdate(HikariProxyPreparedStatement.java)
+	at org.hibernate.engine.jdbc.internal.ResultSetReturnImpl.executeUpdate(ResultSetReturnImpl.java:194)
+	at org.hibernate.id.insert.GetGeneratedKeysDelegate.performInsert(GetGeneratedKeysDelegate.java:107)
+	at org.hibernate.engine.jdbc.mutation.internal.MutationExecutorPostInsertSingleTable.execute(MutationExecutorPostInsertSingleTable.java:100)
+	at org.hibernate.persister.entity.mutation.InsertCoordinator.doStaticInserts(InsertCoordinator.java:175)
+	at org.hibernate.persister.entity.mutation.InsertCoordinator.coordinateInsert(InsertCoordinator.java:113)
+	at org.hibernate.persister.entity.AbstractEntityPersister.insert(AbstractEntityPersister.java:2868)
+	at org.hibernate.action.internal.EntityIdentityInsertAction.execute(EntityIdentityInsertAction.java:81)
+	at org.hibernate.engine.spi.ActionQueue.execute(ActionQueue.java:670)
+	at org.hibernate.engine.spi.ActionQueue.addResolvedEntityInsertAction(ActionQueue.java:291)
+	at org.hibernate.engine.spi.ActionQueue.addInsertAction(ActionQueue.java:272)
+	at org.hibernate.engine.spi.ActionQueue.addAction(ActionQueue.java:322)
+	at org.hibernate.event.internal.AbstractSaveEventListener.addInsertAction(AbstractSaveEventListener.java:386)
+	at org.hibernate.event.internal.AbstractSaveEventListener.performSaveOrReplicate(AbstractSaveEventListener.java:300)
+	at org.hibernate.event.internal.AbstractSaveEventListener.performSave(AbstractSaveEventListener.java:219)
+	at org.hibernate.event.internal.AbstractSaveEventListener.saveWithGeneratedId(AbstractSaveEventListener.java:134)
+	at org.hibernate.event.internal.DefaultPersistEventListener.entityIsTransient(DefaultPersistEventListener.java:175)
+	at org.hibernate.event.internal.DefaultPersistEventListener.persist(DefaultPersistEventListener.java:93)
+	at org.hibernate.event.internal.DefaultPersistEventListener.onPersist(DefaultPersistEventListener.java:77)
+	at org.hibernate.event.internal.DefaultPersistEventListener.onPersist(DefaultPersistEventListener.java:54)
+	at org.hibernate.event.service.internal.EventListenerGroupImpl.fireEventOnEachListener(EventListenerGroupImpl.java:127)
+	at org.hibernate.internal.SessionImpl.firePersist(SessionImpl.java:754)
+	at org.hibernate.internal.SessionImpl.persist(SessionImpl.java:738)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.orm.jpa.ExtendedEntityManagerCreator$ExtendedEntityManagerInvocationHandler.invoke(ExtendedEntityManagerCreator.java:364)
+	at jdk.proxy2/jdk.proxy2.$Proxy128.persist(Unknown Source)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.orm.jpa.SharedEntityManagerCreator$SharedEntityManagerInvocationHandler.invoke(SharedEntityManagerCreator.java:319)
+	at jdk.proxy2/jdk.proxy2.$Proxy128.persist(Unknown Source)
+	at org.springframework.data.jpa.repository.support.SimpleJpaRepository.save(SimpleJpaRepository.java:618)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:351)
+	at org.springframework.data.repository.core.support.RepositoryMethodInvoker$RepositoryFragmentMethodInvoker.lambda$new$0(RepositoryMethodInvoker.java:277)
+	at org.springframework.data.repository.core.support.RepositoryMethodInvoker.doInvoke(RepositoryMethodInvoker.java:170)
+	at org.springframework.data.repository.core.support.RepositoryMethodInvoker.invoke(RepositoryMethodInvoker.java:158)
+	at org.springframework.data.repository.core.support.RepositoryComposition$RepositoryFragments.invoke(RepositoryComposition.java:516)
+	at org.springframework.data.repository.core.support.RepositoryComposition.invoke(RepositoryComposition.java:285)
+	at org.springframework.data.repository.core.support.RepositoryFactorySupport$ImplementationMethodExecutionInterceptor.invoke(RepositoryFactorySupport.java:628)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.data.repository.core.support.QueryExecutorMethodInterceptor.doInvoke(QueryExecutorMethodInterceptor.java:168)
+	at org.springframework.data.repository.core.support.QueryExecutorMethodInterceptor.invoke(QueryExecutorMethodInterceptor.java:143)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.data.projection.DefaultMethodInvokingMethodInterceptor.invoke(DefaultMethodInvokingMethodInterceptor.java:70)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.transaction.interceptor.TransactionInterceptor$1.proceedWithInvocation(TransactionInterceptor.java:123)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:385)
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:119)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:137)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.data.jpa.repository.support.CrudMethodMetadataPostProcessor$CrudMethodMetadataPopulatingMethodInterceptor.invoke(CrudMethodMetadataPostProcessor.java:164)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:97)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:220)
+	at jdk.proxy2/jdk.proxy2.$Proxy132.save(Unknown Source)
+	at com.remiges.adv_java_assignment.service.EmployeeService.addEmp(EmployeeService.java:95)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:351)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:713)
+	at com.remiges.adv_java_assignment.service.EmployeeService$$SpringCGLIB$$0.addEmp(<generated>)
+	at com.remiges.adv_java_assignment.controller.EmployeeController.employeeadd(EmployeeController.java:35)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:259)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:192)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:920)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:830)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:914)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:590)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:205)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:391)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:896)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1744)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2024-03-18 00:01:23,438 o.h.e.jdbc.spi.SqlExceptionHelper - SQL Error: 0, SQLState: 42P01
+2024-03-18 00:01:23,439 o.h.e.jdbc.spi.SqlExceptionHelper - ERROR: relation "employee" does not exist
+  Position: 13
+2024-03-18 00:01:23,440 o.a.c.c.C.[.[.[.[dispatcherServlet] - Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed: org.springframework.dao.InvalidDataAccessResourceUsageException: could not execute statement [ERROR: relation "employee" does not exist
+  Position: 13] [insert into employee (client_reqid,create_date,deptid_id,dob,doj,emp_id,f_name,full_name,rankid_id,reports_to,salary,update_date) values (?,?,?,?,?,?,?,?,?,?,?,?)]; SQL [insert into employee (client_reqid,create_date,deptid_id,dob,doj,emp_id,f_name,full_name,rankid_id,reports_to,salary,update_date) values (?,?,?,?,?,?,?,?,?,?,?,?)]] with root cause
+org.postgresql.util.PSQLException: ERROR: relation "employee" does not exist
+  Position: 13
+	at org.postgresql.core.v3.QueryExecutorImpl.receiveErrorResponse(QueryExecutorImpl.java:2713)
+	at org.postgresql.core.v3.QueryExecutorImpl.processResults(QueryExecutorImpl.java:2401)
+	at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:368)
+	at org.postgresql.jdbc.PgStatement.executeInternal(PgStatement.java:498)
+	at org.postgresql.jdbc.PgStatement.execute(PgStatement.java:415)
+	at org.postgresql.jdbc.PgPreparedStatement.executeWithFlags(PgPreparedStatement.java:190)
+	at org.postgresql.jdbc.PgPreparedStatement.executeUpdate(PgPreparedStatement.java:152)
+	at com.zaxxer.hikari.pool.ProxyPreparedStatement.executeUpdate(ProxyPreparedStatement.java:61)
+	at com.zaxxer.hikari.pool.HikariProxyPreparedStatement.executeUpdate(HikariProxyPreparedStatement.java)
+	at org.hibernate.engine.jdbc.internal.ResultSetReturnImpl.executeUpdate(ResultSetReturnImpl.java:194)
+	at org.hibernate.id.insert.GetGeneratedKeysDelegate.performInsert(GetGeneratedKeysDelegate.java:107)
+	at org.hibernate.engine.jdbc.mutation.internal.MutationExecutorPostInsertSingleTable.execute(MutationExecutorPostInsertSingleTable.java:100)
+	at org.hibernate.persister.entity.mutation.InsertCoordinator.doStaticInserts(InsertCoordinator.java:175)
+	at org.hibernate.persister.entity.mutation.InsertCoordinator.coordinateInsert(InsertCoordinator.java:113)
+	at org.hibernate.persister.entity.AbstractEntityPersister.insert(AbstractEntityPersister.java:2868)
+	at org.hibernate.action.internal.EntityIdentityInsertAction.execute(EntityIdentityInsertAction.java:81)
+	at org.hibernate.engine.spi.ActionQueue.execute(ActionQueue.java:670)
+	at org.hibernate.engine.spi.ActionQueue.addResolvedEntityInsertAction(ActionQueue.java:291)
+	at org.hibernate.engine.spi.ActionQueue.addInsertAction(ActionQueue.java:272)
+	at org.hibernate.engine.spi.ActionQueue.addAction(ActionQueue.java:322)
+	at org.hibernate.event.internal.AbstractSaveEventListener.addInsertAction(AbstractSaveEventListener.java:386)
+	at org.hibernate.event.internal.AbstractSaveEventListener.performSaveOrReplicate(AbstractSaveEventListener.java:300)
+	at org.hibernate.event.internal.AbstractSaveEventListener.performSave(AbstractSaveEventListener.java:219)
+	at org.hibernate.event.internal.AbstractSaveEventListener.saveWithGeneratedId(AbstractSaveEventListener.java:134)
+	at org.hibernate.event.internal.DefaultPersistEventListener.entityIsTransient(DefaultPersistEventListener.java:175)
+	at org.hibernate.event.internal.DefaultPersistEventListener.persist(DefaultPersistEventListener.java:93)
+	at org.hibernate.event.internal.DefaultPersistEventListener.onPersist(DefaultPersistEventListener.java:77)
+	at org.hibernate.event.internal.DefaultPersistEventListener.onPersist(DefaultPersistEventListener.java:54)
+	at org.hibernate.event.service.internal.EventListenerGroupImpl.fireEventOnEachListener(EventListenerGroupImpl.java:127)
+	at org.hibernate.internal.SessionImpl.firePersist(SessionImpl.java:754)
+	at org.hibernate.internal.SessionImpl.persist(SessionImpl.java:738)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.orm.jpa.ExtendedEntityManagerCreator$ExtendedEntityManagerInvocationHandler.invoke(ExtendedEntityManagerCreator.java:364)
+	at jdk.proxy2/jdk.proxy2.$Proxy128.persist(Unknown Source)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.orm.jpa.SharedEntityManagerCreator$SharedEntityManagerInvocationHandler.invoke(SharedEntityManagerCreator.java:319)
+	at jdk.proxy2/jdk.proxy2.$Proxy128.persist(Unknown Source)
+	at org.springframework.data.jpa.repository.support.SimpleJpaRepository.save(SimpleJpaRepository.java:618)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:351)
+	at org.springframework.data.repository.core.support.RepositoryMethodInvoker$RepositoryFragmentMethodInvoker.lambda$new$0(RepositoryMethodInvoker.java:277)
+	at org.springframework.data.repository.core.support.RepositoryMethodInvoker.doInvoke(RepositoryMethodInvoker.java:170)
+	at org.springframework.data.repository.core.support.RepositoryMethodInvoker.invoke(RepositoryMethodInvoker.java:158)
+	at org.springframework.data.repository.core.support.RepositoryComposition$RepositoryFragments.invoke(RepositoryComposition.java:516)
+	at org.springframework.data.repository.core.support.RepositoryComposition.invoke(RepositoryComposition.java:285)
+	at org.springframework.data.repository.core.support.RepositoryFactorySupport$ImplementationMethodExecutionInterceptor.invoke(RepositoryFactorySupport.java:628)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.data.repository.core.support.QueryExecutorMethodInterceptor.doInvoke(QueryExecutorMethodInterceptor.java:168)
+	at org.springframework.data.repository.core.support.QueryExecutorMethodInterceptor.invoke(QueryExecutorMethodInterceptor.java:143)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.data.projection.DefaultMethodInvokingMethodInterceptor.invoke(DefaultMethodInvokingMethodInterceptor.java:70)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.transaction.interceptor.TransactionInterceptor$1.proceedWithInvocation(TransactionInterceptor.java:123)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:385)
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:119)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:137)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.data.jpa.repository.support.CrudMethodMetadataPostProcessor$CrudMethodMetadataPopulatingMethodInterceptor.invoke(CrudMethodMetadataPostProcessor.java:164)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:97)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:220)
+	at jdk.proxy2/jdk.proxy2.$Proxy132.save(Unknown Source)
+	at com.remiges.adv_java_assignment.service.EmployeeService.addEmp(EmployeeService.java:95)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:351)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:713)
+	at com.remiges.adv_java_assignment.service.EmployeeService$$SpringCGLIB$$0.addEmp(<generated>)
+	at com.remiges.adv_java_assignment.controller.EmployeeController.employeeadd(EmployeeController.java:35)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:259)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:192)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:920)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:830)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:914)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:590)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:205)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:391)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:896)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1744)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2024-03-18 00:01:35,767 o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-03-18 00:01:35,768 com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2024-03-18 00:01:35,778 com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2024-03-18 00:01:39,816 c.r.a.AdvJavaAssignmentApplication - Starting AdvJavaAssignmentApplication using Java 21.0.2 with PID 1031587 (/home/surajg/Downloads/advanced-java-surajg_1/target/classes started by surajg in /home/surajg/Downloads/advanced-java-surajg_1)
+2024-03-18 00:01:39,817 c.r.a.AdvJavaAssignmentApplication - Running with Spring Boot v3.2.3, Spring v6.1.4
+2024-03-18 00:01:39,817 c.r.a.AdvJavaAssignmentApplication - No active profile set, falling back to 1 default profile: "default"
+2024-03-18 00:01:40,385 o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2024-03-18 00:01:40,386 o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-03-18 00:01:40,500 o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 109 ms. Found 4 JPA repository interfaces.
+2024-03-18 00:01:40,524 o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2024-03-18 00:01:40,525 o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2024-03-18 00:01:40,542 o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.remiges.adv_java_assignment.repo.DeptRepo; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2024-03-18 00:01:40,542 o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.remiges.adv_java_assignment.repo.EmployeeRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2024-03-18 00:01:40,542 o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.remiges.adv_java_assignment.repo.EmployeeShadowRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2024-03-18 00:01:40,543 o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.remiges.adv_java_assignment.repo.RankRepo; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2024-03-18 00:01:40,543 o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 8 ms. Found 0 Redis repository interfaces.
+2024-03-18 00:01:41,007 o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2024-03-18 00:01:41,017 o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2024-03-18 00:01:41,019 o.a.catalina.core.StandardService - Starting service [Tomcat]
+2024-03-18 00:01:41,019 o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.19]
+2024-03-18 00:01:41,063 o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2024-03-18 00:01:41,064 o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1209 ms
+2024-03-18 00:01:41,235 o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-03-18 00:01:41,287 org.hibernate.Version - HHH000412: Hibernate ORM core version 6.4.4.Final
+2024-03-18 00:01:41,313 o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2024-03-18 00:01:41,471 o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-03-18 00:01:41,489 com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2024-03-18 00:01:41,764 com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@f810c18
+2024-03-18 00:01:41,765 com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2024-03-18 00:01:41,787 org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-03-18 00:01:42,570 o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-03-18 00:01:42,639 o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+2024-03-18 00:01:42,639 o.h.e.jdbc.spi.SqlExceptionHelper - constraint "uk_p0qw73v7jwaff4dqc80hpfs9k" of relation "employee" does not exist, skipping
+2024-03-18 00:01:42,669 o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-03-18 00:01:42,884 o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-03-18 00:01:43,195 o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-03-18 00:01:43,565 o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2024-03-18 00:01:43,574 o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path ''
+2024-03-18 00:01:43,583 c.r.a.AdvJavaAssignmentApplication - Started AdvJavaAssignmentApplication in 4.029 seconds (process running for 4.412)
+2024-03-18 00:02:23,480 o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-03-18 00:02:23,480 o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2024-03-18 00:02:23,481 o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2024-03-18 10:05:04,745 o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.http.converter.HttpMessageNotReadableException: JSON parse error: Cannot deserialize value of type `java.sql.Date` from String "2024-03-1": not a valid representation (error: Failed to parse Date value '2024-03-1': Cannot parse date "2024-03-1": while it seems to fit format 'yyyy-MM-dd', parsing fails (leniency? null))]
+2024-03-18 10:06:17,639 o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-03-18 10:06:17,641 com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2024-03-18 10:06:17,652 com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2024-03-18 10:06:18,642 c.r.a.AdvJavaAssignmentApplication - Starting AdvJavaAssignmentApplication using Java 21.0.2 with PID 1041067 (/home/surajg/Downloads/advanced-java-surajg_1/target/classes started by surajg in /home/surajg/Downloads/advanced-java-surajg_1)
+2024-03-18 10:06:18,643 c.r.a.AdvJavaAssignmentApplication - Running with Spring Boot v3.2.3, Spring v6.1.4
+2024-03-18 10:06:18,644 c.r.a.AdvJavaAssignmentApplication - No active profile set, falling back to 1 default profile: "default"
+2024-03-18 10:06:19,151 o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: java.lang.IllegalStateException: Error processing condition on org.springframework.boot.autoconfigure.context.PropertyPlaceholderAutoConfiguration.propertySourcesPlaceholderConfigurer
+2024-03-18 10:06:19,158 o.s.b.a.l.ConditionEvaluationReportLogger - 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2024-03-18 10:06:19,183 o.s.boot.SpringApplication - Application run failed
+java.lang.IllegalStateException: Error processing condition on org.springframework.boot.autoconfigure.context.PropertyPlaceholderAutoConfiguration.propertySourcesPlaceholderConfigurer
+	at org.springframework.boot.autoconfigure.condition.SpringBootCondition.matches(SpringBootCondition.java:60)
+	at org.springframework.context.annotation.ConditionEvaluator.shouldSkip(ConditionEvaluator.java:108)
+	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.loadBeanDefinitionsForBeanMethod(ConfigurationClassBeanDefinitionReader.java:183)
+	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.loadBeanDefinitionsForConfigurationClass(ConfigurationClassBeanDefinitionReader.java:144)
+	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.loadBeanDefinitions(ConfigurationClassBeanDefinitionReader.java:120)
+	at org.springframework.context.annotation.ConfigurationClassPostProcessor.processConfigBeanDefinitions(ConfigurationClassPostProcessor.java:428)
+	at org.springframework.context.annotation.ConfigurationClassPostProcessor.postProcessBeanDefinitionRegistry(ConfigurationClassPostProcessor.java:289)
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanDefinitionRegistryPostProcessors(PostProcessorRegistrationDelegate.java:349)
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanFactoryPostProcessors(PostProcessorRegistrationDelegate.java:118)
+	at org.springframework.context.support.AbstractApplicationContext.invokeBeanFactoryPostProcessors(AbstractApplicationContext.java:788)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:606)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:754)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:456)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:334)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1354)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1343)
+	at com.remiges.adv_java_assignment.AdvJavaAssignmentApplication.main(AdvJavaAssignmentApplication.java:12)
+Caused by: java.lang.IllegalStateException: Failed to introspect Class [com.remiges.adv_java_assignment.config.SecurityConfig] from ClassLoader [jdk.internal.loader.ClassLoaders$AppClassLoader@4f2410ac]
+	at org.springframework.util.ReflectionUtils.getDeclaredMethods(ReflectionUtils.java:483)
+	at org.springframework.util.ReflectionUtils.doWithMethods(ReflectionUtils.java:360)
+	at org.springframework.util.ReflectionUtils.getUniqueDeclaredMethods(ReflectionUtils.java:417)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.lambda$getTypeForFactoryMethod$1(AbstractAutowireCapableBeanFactory.java:750)
+	at java.base/java.util.concurrent.ConcurrentHashMap.computeIfAbsent(ConcurrentHashMap.java:1708)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.getTypeForFactoryMethod(AbstractAutowireCapableBeanFactory.java:749)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.determineTargetType(AbstractAutowireCapableBeanFactory.java:682)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.predictBeanType(AbstractAutowireCapableBeanFactory.java:653)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.isFactoryBean(AbstractBeanFactory.java:1644)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doGetBeanNamesForType(DefaultListableBeanFactory.java:562)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.getBeanNamesForType(DefaultListableBeanFactory.java:534)
+	at org.springframework.boot.autoconfigure.condition.OnBeanCondition.collectBeanNamesForType(OnBeanCondition.java:247)
+	at org.springframework.boot.autoconfigure.condition.OnBeanCondition.getBeanNamesForType(OnBeanCondition.java:240)
+	at org.springframework.boot.autoconfigure.condition.OnBeanCondition.getBeanNamesForType(OnBeanCondition.java:230)
+	at org.springframework.boot.autoconfigure.condition.OnBeanCondition.getMatchingBeans(OnBeanCondition.java:183)
+	at org.springframework.boot.autoconfigure.condition.OnBeanCondition.getMatchOutcome(OnBeanCondition.java:158)
+	at org.springframework.boot.autoconfigure.condition.SpringBootCondition.matches(SpringBootCondition.java:47)
+	... 17 common frames omitted
+Caused by: java.lang.NoClassDefFoundError: UserDetailsService
+	at java.base/java.lang.Class.getDeclaredMethods0(Native Method)
+	at java.base/java.lang.Class.privateGetDeclaredMethods(Class.java:3578)
+	at java.base/java.lang.Class.getDeclaredMethods(Class.java:2676)
+	at org.springframework.util.ReflectionUtils.getDeclaredMethods(ReflectionUtils.java:465)
+	... 33 common frames omitted
+Caused by: java.lang.ClassNotFoundException: UserDetailsService
+	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:641)
+	at java.base/jdk.internal.loader.ClassLoaders$AppClassLoader.loadClass(ClassLoaders.java:188)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:526)
+	... 37 common frames omitted
+2024-03-18 10:08:29,185 c.r.a.AdvJavaAssignmentApplication - Starting AdvJavaAssignmentApplication using Java 21.0.2 with PID 1041925 (/home/surajg/Downloads/advanced-java-surajg_1/target/classes started by surajg in /home/surajg/Downloads/advanced-java-surajg_1)
+2024-03-18 10:08:29,185 c.r.a.AdvJavaAssignmentApplication - Running with Spring Boot v3.2.3, Spring v6.1.4
+2024-03-18 10:08:29,186 c.r.a.AdvJavaAssignmentApplication - No active profile set, falling back to 1 default profile: "default"
+2024-03-18 10:08:29,937 o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2024-03-18 10:08:29,938 o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-03-18 10:08:30,057 o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 111 ms. Found 4 JPA repository interfaces.
+2024-03-18 10:08:30,075 o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2024-03-18 10:08:30,076 o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2024-03-18 10:08:30,089 o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.remiges.adv_java_assignment.repo.DeptRepo; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2024-03-18 10:08:30,089 o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.remiges.adv_java_assignment.repo.EmployeeRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2024-03-18 10:08:30,089 o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.remiges.adv_java_assignment.repo.EmployeeShadowRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2024-03-18 10:08:30,089 o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.remiges.adv_java_assignment.repo.RankRepo; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2024-03-18 10:08:30,089 o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 5 ms. Found 0 Redis repository interfaces.
+2024-03-18 10:08:30,739 o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2024-03-18 10:08:30,747 o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2024-03-18 10:08:30,749 o.a.catalina.core.StandardService - Starting service [Tomcat]
+2024-03-18 10:08:30,749 o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.19]
+2024-03-18 10:08:30,791 o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2024-03-18 10:08:30,793 o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1573 ms
+2024-03-18 10:08:30,956 o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-03-18 10:08:31,029 org.hibernate.Version - HHH000412: Hibernate ORM core version 6.4.4.Final
+2024-03-18 10:08:31,065 o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2024-03-18 10:08:31,252 o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-03-18 10:08:31,270 com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2024-03-18 10:08:31,563 com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@11f3400c
+2024-03-18 10:08:31,565 com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2024-03-18 10:08:31,592 org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-03-18 10:08:32,351 o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-03-18 10:08:32,409 o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-03-18 10:08:32,649 o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-03-18 10:08:32,983 o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-03-18 10:08:33,471 o.s.b.a.s.s.UserDetailsServiceAutoConfiguration - 
+
+Using generated security password: 23999b5b-3359-4b8e-b817-f4083ae3b62b
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2024-03-18 10:08:33,594 o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@2a3251ad, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@457547a1, org.springframework.security.web.context.SecurityContextHolderFilter@64cbc28e, org.springframework.security.web.header.HeaderWriterFilter@3e11996e, org.springframework.web.filter.CorsFilter@795ce9b5, org.springframework.security.web.csrf.CsrfFilter@44eda25b, org.springframework.security.web.authentication.logout.LogoutFilter@4d609cc3, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@6019ce4b, org.springframework.security.web.authentication.ui.DefaultLoginPageGeneratingFilter@5a90ea5c, org.springframework.security.web.authentication.ui.DefaultLogoutPageGeneratingFilter@280cb0b4, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@52b7a3e1, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@4842a683, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@65a03c19, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@108b2321, org.springframework.security.web.access.ExceptionTranslationFilter@19740583, org.springframework.security.web.access.intercept.AuthorizationFilter@336b7da4]
+2024-03-18 10:08:33,640 o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2024-03-18 10:08:33,655 o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path ''
+2024-03-18 10:08:33,666 c.r.a.AdvJavaAssignmentApplication - Started AdvJavaAssignmentApplication in 4.761 seconds (process running for 5.151)
+2024-03-18 10:09:50,245 o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-03-18 10:09:50,246 o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2024-03-18 10:09:50,247 o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2024-03-18 10:33:11,074 o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-03-18 10:33:11,076 com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2024-03-18 10:33:11,088 com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2024-03-18 10:33:12,197 c.r.a.AdvJavaAssignmentApplication - Starting AdvJavaAssignmentApplication using Java 21.0.2 with PID 1051190 (/home/surajg/Downloads/advanced-java-surajg_1/target/classes started by surajg in /home/surajg/Downloads/advanced-java-surajg_1)
+2024-03-18 10:33:12,198 c.r.a.AdvJavaAssignmentApplication - Running with Spring Boot v3.2.3, Spring v6.1.4
+2024-03-18 10:33:12,199 c.r.a.AdvJavaAssignmentApplication - No active profile set, falling back to 1 default profile: "default"
+2024-03-18 10:33:12,887 o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2024-03-18 10:33:12,889 o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-03-18 10:33:13,031 o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 135 ms. Found 4 JPA repository interfaces.
+2024-03-18 10:33:13,056 o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2024-03-18 10:33:13,057 o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2024-03-18 10:33:13,071 o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.remiges.adv_java_assignment.repo.DeptRepo; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2024-03-18 10:33:13,072 o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.remiges.adv_java_assignment.repo.EmployeeRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2024-03-18 10:33:13,072 o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.remiges.adv_java_assignment.repo.EmployeeShadowRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2024-03-18 10:33:13,072 o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.remiges.adv_java_assignment.repo.RankRepo; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2024-03-18 10:33:13,072 o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 6 ms. Found 0 Redis repository interfaces.
+2024-03-18 10:33:13,705 o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2024-03-18 10:33:13,716 o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2024-03-18 10:33:13,719 o.a.catalina.core.StandardService - Starting service [Tomcat]
+2024-03-18 10:33:13,720 o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.19]
+2024-03-18 10:33:13,777 o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2024-03-18 10:33:13,779 o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1545 ms
+2024-03-18 10:33:13,955 o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-03-18 10:33:14,021 org.hibernate.Version - HHH000412: Hibernate ORM core version 6.4.4.Final
+2024-03-18 10:33:14,055 o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2024-03-18 10:33:14,253 o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-03-18 10:33:14,275 com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2024-03-18 10:33:14,568 com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@2b4829aa
+2024-03-18 10:33:14,569 com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2024-03-18 10:33:14,596 org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-03-18 10:33:15,413 o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-03-18 10:33:15,476 o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-03-18 10:33:15,730 o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-03-18 10:33:16,280 o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-03-18 10:33:16,776 o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@36e8fefe, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@5e8633da, org.springframework.security.web.context.SecurityContextHolderFilter@53ec379a, org.springframework.security.web.header.HeaderWriterFilter@47897093, org.springframework.web.filter.CorsFilter@70c3c5d7, org.springframework.security.web.csrf.CsrfFilter@4bd7e0b6, org.springframework.security.web.authentication.logout.LogoutFilter@672e4658, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@267a0b6a, org.springframework.security.web.authentication.ui.DefaultLoginPageGeneratingFilter@3e11996e, org.springframework.security.web.authentication.ui.DefaultLogoutPageGeneratingFilter@236e6563, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@336b7da4, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@606c2e4b, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@1b914e36, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@528070fe, org.springframework.security.web.access.ExceptionTranslationFilter@5aa0e9c6, org.springframework.security.web.access.intercept.AuthorizationFilter@6fb514db]
+2024-03-18 10:33:16,819 o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2024-03-18 10:33:16,839 o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path ''
+2024-03-18 10:33:16,850 c.r.a.AdvJavaAssignmentApplication - Started AdvJavaAssignmentApplication in 4.942 seconds (process running for 5.436)
+2024-03-18 10:33:53,094 o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-03-18 10:33:53,095 o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2024-03-18 10:33:53,096 o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2024-03-18 10:35:00,645 o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-03-18 10:35:00,647 com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2024-03-18 10:35:00,659 com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2024-03-18 10:35:01,767 c.r.a.AdvJavaAssignmentApplication - Starting AdvJavaAssignmentApplication using Java 21.0.2 with PID 1051942 (/home/surajg/Downloads/advanced-java-surajg_1/target/classes started by surajg in /home/surajg/Downloads/advanced-java-surajg_1)
+2024-03-18 10:35:01,768 c.r.a.AdvJavaAssignmentApplication - Running with Spring Boot v3.2.3, Spring v6.1.4
+2024-03-18 10:35:01,768 c.r.a.AdvJavaAssignmentApplication - No active profile set, falling back to 1 default profile: "default"
+2024-03-18 10:35:02,447 o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2024-03-18 10:35:02,448 o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-03-18 10:35:02,550 o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 97 ms. Found 4 JPA repository interfaces.
+2024-03-18 10:35:02,567 o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2024-03-18 10:35:02,568 o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2024-03-18 10:35:02,582 o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.remiges.adv_java_assignment.repo.DeptRepo; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2024-03-18 10:35:02,583 o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.remiges.adv_java_assignment.repo.EmployeeRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2024-03-18 10:35:02,583 o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.remiges.adv_java_assignment.repo.EmployeeShadowRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2024-03-18 10:35:02,583 o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.remiges.adv_java_assignment.repo.RankRepo; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2024-03-18 10:35:02,583 o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 8 ms. Found 0 Redis repository interfaces.
+2024-03-18 10:35:03,201 o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2024-03-18 10:35:03,212 o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2024-03-18 10:35:03,213 o.a.catalina.core.StandardService - Starting service [Tomcat]
+2024-03-18 10:35:03,214 o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.19]
+2024-03-18 10:35:03,253 o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2024-03-18 10:35:03,253 o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1441 ms
+2024-03-18 10:35:03,457 o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-03-18 10:35:03,509 org.hibernate.Version - HHH000412: Hibernate ORM core version 6.4.4.Final
+2024-03-18 10:35:03,550 o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2024-03-18 10:35:03,784 o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-03-18 10:35:03,815 com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2024-03-18 10:35:04,135 com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@6df37f7a
+2024-03-18 10:35:04,137 com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2024-03-18 10:35:04,163 org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-03-18 10:35:05,115 o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-03-18 10:35:05,183 o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-03-18 10:35:05,501 o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-03-18 10:35:06,115 o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-03-18 10:35:06,693 o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@16575bfe, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@60003305, org.springframework.security.web.context.SecurityContextHolderFilter@5e3a577a, org.springframework.security.web.header.HeaderWriterFilter@6517bc6b, org.springframework.web.filter.CorsFilter@3f1dadeb, org.springframework.security.web.csrf.CsrfFilter@75392381, org.springframework.security.web.authentication.logout.LogoutFilter@16c3e494, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@58338338, org.springframework.security.web.authentication.ui.DefaultLoginPageGeneratingFilter@33e19be9, org.springframework.security.web.authentication.ui.DefaultLogoutPageGeneratingFilter@72259917, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@267a0b6a, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@4b38d912, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@626e5554, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@5e81b406, org.springframework.security.web.access.ExceptionTranslationFilter@259647f2, org.springframework.security.web.access.intercept.AuthorizationFilter@4c954b79]
+2024-03-18 10:35:06,751 o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2024-03-18 10:35:06,768 o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path ''
+2024-03-18 10:35:06,780 c.r.a.AdvJavaAssignmentApplication - Started AdvJavaAssignmentApplication in 5.342 seconds (process running for 5.758)
+2024-03-18 10:36:57,621 o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-03-18 10:36:57,622 o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2024-03-18 10:36:57,623 o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2024-03-18 10:39:55,596 o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' is not supported]
+2024-03-18 11:20:07,065 o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-03-18 11:20:07,066 com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2024-03-18 11:20:07,072 com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2024-03-18 11:20:08,038 c.r.a.AdvJavaAssignmentApplication - Starting AdvJavaAssignmentApplication using Java 21.0.2 with PID 1068472 (/home/surajg/Downloads/advanced-java-surajg_1/target/classes started by surajg in /home/surajg/Downloads/advanced-java-surajg_1)
+2024-03-18 11:20:08,039 c.r.a.AdvJavaAssignmentApplication - Running with Spring Boot v3.2.3, Spring v6.1.4
+2024-03-18 11:20:08,040 c.r.a.AdvJavaAssignmentApplication - No active profile set, falling back to 1 default profile: "default"
+2024-03-18 11:20:08,643 o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2024-03-18 11:20:08,645 o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-03-18 11:20:08,750 o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 96 ms. Found 4 JPA repository interfaces.
+2024-03-18 11:20:08,770 o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2024-03-18 11:20:08,771 o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2024-03-18 11:20:08,782 o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.remiges.adv_java_assignment.repo.DeptRepo; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2024-03-18 11:20:08,783 o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.remiges.adv_java_assignment.repo.EmployeeRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2024-03-18 11:20:08,783 o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.remiges.adv_java_assignment.repo.EmployeeShadowRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2024-03-18 11:20:08,783 o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.remiges.adv_java_assignment.repo.RankRepo; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2024-03-18 11:20:08,783 o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 7 ms. Found 0 Redis repository interfaces.
+2024-03-18 11:20:09,346 o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2024-03-18 11:20:09,355 o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2024-03-18 11:20:09,357 o.a.catalina.core.StandardService - Starting service [Tomcat]
+2024-03-18 11:20:09,357 o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.19]
+2024-03-18 11:20:09,399 o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2024-03-18 11:20:09,401 o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1329 ms
+2024-03-18 11:20:09,588 o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-03-18 11:20:09,641 org.hibernate.Version - HHH000412: Hibernate ORM core version 6.4.4.Final
+2024-03-18 11:20:09,679 o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2024-03-18 11:20:09,869 o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-03-18 11:20:09,886 com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2024-03-18 11:20:10,147 com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@135064ea
+2024-03-18 11:20:10,149 com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2024-03-18 11:20:10,186 org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-03-18 11:20:10,909 o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-03-18 11:20:10,966 o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-03-18 11:20:11,192 o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-03-18 11:20:11,697 o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-03-18 11:20:12,300 o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@16575bfe, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@60003305, org.springframework.security.web.context.SecurityContextHolderFilter@5e3a577a, org.springframework.security.web.header.HeaderWriterFilter@6517bc6b, org.springframework.web.filter.CorsFilter@3f1dadeb, org.springframework.security.web.csrf.CsrfFilter@75392381, org.springframework.security.web.authentication.logout.LogoutFilter@16c3e494, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@58338338, org.springframework.security.web.authentication.ui.DefaultLoginPageGeneratingFilter@33e19be9, org.springframework.security.web.authentication.ui.DefaultLogoutPageGeneratingFilter@72259917, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@267a0b6a, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@4b38d912, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@626e5554, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@5e81b406, org.springframework.security.web.access.ExceptionTranslationFilter@259647f2, org.springframework.security.web.access.intercept.AuthorizationFilter@4c954b79]
+2024-03-18 11:20:12,347 o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2024-03-18 11:20:12,359 o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path ''
+2024-03-18 11:20:12,372 c.r.a.AdvJavaAssignmentApplication - Started AdvJavaAssignmentApplication in 4.596 seconds (process running for 4.977)
+2024-03-18 11:20:19,400 o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-03-18 11:20:19,400 o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2024-03-18 11:20:19,401 o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2024-03-18 11:37:36,881 o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-03-18 11:37:36,884 com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2024-03-18 11:37:36,891 com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2024-03-18 11:37:37,896 c.r.a.AdvJavaAssignmentApplication - Starting AdvJavaAssignmentApplication using Java 21.0.2 with PID 1074891 (/home/surajg/Downloads/advanced-java-surajg_1/target/classes started by surajg in /home/surajg/Downloads/advanced-java-surajg_1)
+2024-03-18 11:37:37,897 c.r.a.AdvJavaAssignmentApplication - Running with Spring Boot v3.2.3, Spring v6.1.4
+2024-03-18 11:37:37,898 c.r.a.AdvJavaAssignmentApplication - No active profile set, falling back to 1 default profile: "default"
+2024-03-18 11:37:38,504 o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2024-03-18 11:37:38,506 o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-03-18 11:37:38,606 o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 94 ms. Found 4 JPA repository interfaces.
+2024-03-18 11:37:38,624 o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2024-03-18 11:37:38,625 o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2024-03-18 11:37:38,637 o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.remiges.adv_java_assignment.repo.DeptRepo; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2024-03-18 11:37:38,637 o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.remiges.adv_java_assignment.repo.EmployeeRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2024-03-18 11:37:38,637 o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.remiges.adv_java_assignment.repo.EmployeeShadowRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2024-03-18 11:37:38,637 o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.remiges.adv_java_assignment.repo.RankRepo; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2024-03-18 11:37:38,638 o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 7 ms. Found 0 Redis repository interfaces.
+2024-03-18 11:37:39,123 o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2024-03-18 11:37:39,134 o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2024-03-18 11:37:39,136 o.a.catalina.core.StandardService - Starting service [Tomcat]
+2024-03-18 11:37:39,136 o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.19]
+2024-03-18 11:37:39,178 o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2024-03-18 11:37:39,178 o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1241 ms
+2024-03-18 11:37:39,374 o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-03-18 11:37:39,430 org.hibernate.Version - HHH000412: Hibernate ORM core version 6.4.4.Final
+2024-03-18 11:37:39,456 o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2024-03-18 11:37:39,615 o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-03-18 11:37:39,634 com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2024-03-18 11:37:39,944 com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@135064ea
+2024-03-18 11:37:39,945 com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2024-03-18 11:37:39,967 org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-03-18 11:37:40,757 o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-03-18 11:37:40,815 o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-03-18 11:37:41,109 o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-03-18 11:37:41,574 o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-03-18 11:37:42,036 o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@16575bfe, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@60003305, org.springframework.security.web.context.SecurityContextHolderFilter@5e3a577a, org.springframework.security.web.header.HeaderWriterFilter@6517bc6b, org.springframework.web.filter.CorsFilter@3f1dadeb, org.springframework.security.web.csrf.CsrfFilter@75392381, org.springframework.security.web.authentication.logout.LogoutFilter@16c3e494, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@58338338, org.springframework.security.web.authentication.ui.DefaultLoginPageGeneratingFilter@33e19be9, org.springframework.security.web.authentication.ui.DefaultLogoutPageGeneratingFilter@72259917, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@267a0b6a, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@4b38d912, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@626e5554, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@5e81b406, org.springframework.security.web.access.ExceptionTranslationFilter@259647f2, org.springframework.security.web.access.intercept.AuthorizationFilter@4c954b79]
+2024-03-18 11:37:42,074 o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2024-03-18 11:37:42,085 o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path ''
+2024-03-18 11:37:42,092 c.r.a.AdvJavaAssignmentApplication - Started AdvJavaAssignmentApplication in 4.462 seconds (process running for 4.875)
+2024-03-18 11:37:50,891 o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-03-18 11:37:50,891 o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2024-03-18 11:37:50,892 o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2024-03-18 11:49:05,064 o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-03-18 11:49:05,066 com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2024-03-18 11:49:05,075 com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2024-03-18 11:49:06,196 c.r.a.AdvJavaAssignmentApplication - Starting AdvJavaAssignmentApplication using Java 21.0.2 with PID 1079144 (/home/surajg/Downloads/advanced-java-surajg_1/target/classes started by surajg in /home/surajg/Downloads/advanced-java-surajg_1)
+2024-03-18 11:49:06,197 c.r.a.AdvJavaAssignmentApplication - Running with Spring Boot v3.2.3, Spring v6.1.4
+2024-03-18 11:49:06,198 c.r.a.AdvJavaAssignmentApplication - No active profile set, falling back to 1 default profile: "default"
+2024-03-18 11:49:06,908 o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2024-03-18 11:49:06,910 o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-03-18 11:49:07,024 o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 108 ms. Found 4 JPA repository interfaces.
+2024-03-18 11:49:07,042 o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2024-03-18 11:49:07,043 o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2024-03-18 11:49:07,061 o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.remiges.adv_java_assignment.repo.DeptRepo; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2024-03-18 11:49:07,061 o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.remiges.adv_java_assignment.repo.EmployeeRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2024-03-18 11:49:07,061 o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.remiges.adv_java_assignment.repo.EmployeeShadowRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2024-03-18 11:49:07,062 o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.remiges.adv_java_assignment.repo.RankRepo; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2024-03-18 11:49:07,062 o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 9 ms. Found 0 Redis repository interfaces.
+2024-03-18 11:49:07,597 o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2024-03-18 11:49:07,623 o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2024-03-18 11:49:07,626 o.a.catalina.core.StandardService - Starting service [Tomcat]
+2024-03-18 11:49:07,626 o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.19]
+2024-03-18 11:49:07,680 o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2024-03-18 11:49:07,682 o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1439 ms
+2024-03-18 11:49:07,930 o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-03-18 11:49:07,974 org.hibernate.Version - HHH000412: Hibernate ORM core version 6.4.4.Final
+2024-03-18 11:49:08,001 o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2024-03-18 11:49:08,161 o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-03-18 11:49:08,184 com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2024-03-18 11:49:08,473 com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@61c5fd78
+2024-03-18 11:49:08,474 com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2024-03-18 11:49:08,510 org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-03-18 11:49:09,395 o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-03-18 11:49:09,467 o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-03-18 11:49:09,716 o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-03-18 11:49:10,063 o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-03-18 11:49:10,409 o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@508de524, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@617d697, org.springframework.security.web.context.SecurityContextHolderFilter@77e42cbf, org.springframework.security.web.header.HeaderWriterFilter@31e5d408, org.springframework.web.filter.CorsFilter@3a4d0ca2, org.springframework.security.web.csrf.CsrfFilter@236bb278, org.springframework.security.web.authentication.logout.LogoutFilter@45594dfe, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@1f4083ac, org.springframework.security.web.authentication.ui.DefaultLoginPageGeneratingFilter@45b37003, org.springframework.security.web.authentication.ui.DefaultLogoutPageGeneratingFilter@149162a4, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@44a25dc7, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@6aeb769d, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@51f412e6, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@2b8a11d7, org.springframework.security.web.access.ExceptionTranslationFilter@5379488c, org.springframework.security.web.access.intercept.AuthorizationFilter@1704437b]
+2024-03-18 11:49:10,632 o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2024-03-18 11:49:10,644 o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path ''
+2024-03-18 11:49:10,653 c.r.a.AdvJavaAssignmentApplication - Started AdvJavaAssignmentApplication in 4.744 seconds (process running for 5.248)
+2024-03-18 11:49:13,010 o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-03-18 11:49:13,010 o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2024-03-18 11:49:13,012 o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2024-03-18 15:52:56,248 o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-03-18 15:52:56,251 com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2024-03-18 15:52:56,259 com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2024-03-18 15:52:57,197 c.r.a.AdvJavaAssignmentApplication - Starting AdvJavaAssignmentApplication using Java 21.0.2 with PID 1149198 (/home/surajg/Downloads/advanced-java-surajg_1/target/classes started by surajg in /home/surajg/Downloads/advanced-java-surajg_1)
+2024-03-18 15:52:57,197 c.r.a.AdvJavaAssignmentApplication - Running with Spring Boot v3.2.3, Spring v6.1.4
+2024-03-18 15:52:57,198 c.r.a.AdvJavaAssignmentApplication - No active profile set, falling back to 1 default profile: "default"
+2024-03-18 15:52:57,813 o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2024-03-18 15:52:57,814 o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-03-18 15:52:57,935 o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 111 ms. Found 4 JPA repository interfaces.
+2024-03-18 15:52:57,960 o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2024-03-18 15:52:57,961 o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2024-03-18 15:52:57,975 o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.remiges.adv_java_assignment.repo.DeptRepo; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2024-03-18 15:52:57,976 o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.remiges.adv_java_assignment.repo.EmployeeRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2024-03-18 15:52:57,976 o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.remiges.adv_java_assignment.repo.EmployeeShadowRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2024-03-18 15:52:57,976 o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.remiges.adv_java_assignment.repo.RankRepo; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2024-03-18 15:52:57,976 o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 6 ms. Found 0 Redis repository interfaces.
+2024-03-18 15:52:58,458 o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2024-03-18 15:52:58,468 o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2024-03-18 15:52:58,471 o.a.catalina.core.StandardService - Starting service [Tomcat]
+2024-03-18 15:52:58,471 o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.19]
+2024-03-18 15:52:58,510 o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2024-03-18 15:52:58,511 o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1279 ms
+2024-03-18 15:52:58,523 o.s.b.w.e.tomcat.TomcatStarter - Error starting Tomcat context. Exception: org.springframework.beans.factory.BeanCreationException. Message: Error creating bean with name 'jwtAuthenticationFilter': Lookup method resolution failed
+2024-03-18 15:52:58,541 o.a.catalina.core.StandardService - Stopping service [Tomcat]
+2024-03-18 15:52:58,548 o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Unable to start web server
+2024-03-18 15:52:58,556 o.s.b.a.l.ConditionEvaluationReportLogger - 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2024-03-18 15:52:58,566 o.s.boot.SpringApplication - Application run failed
+org.springframework.context.ApplicationContextException: Unable to start web server
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.onRefresh(ServletWebServerApplicationContext.java:165)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:618)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:754)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:456)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:334)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1354)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1343)
+	at com.remiges.adv_java_assignment.AdvJavaAssignmentApplication.main(AdvJavaAssignmentApplication.java:12)
+Caused by: org.springframework.boot.web.server.WebServerException: Unable to start embedded Tomcat
+	at org.springframework.boot.web.embedded.tomcat.TomcatWebServer.initialize(TomcatWebServer.java:145)
+	at org.springframework.boot.web.embedded.tomcat.TomcatWebServer.<init>(TomcatWebServer.java:105)
+	at org.springframework.boot.web.embedded.tomcat.TomcatServletWebServerFactory.getTomcatWebServer(TomcatServletWebServerFactory.java:499)
+	at org.springframework.boot.web.embedded.tomcat.TomcatServletWebServerFactory.getWebServer(TomcatServletWebServerFactory.java:218)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.createWebServer(ServletWebServerApplicationContext.java:188)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.onRefresh(ServletWebServerApplicationContext.java:162)
+	... 8 common frames omitted
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'jwtAuthenticationFilter': Lookup method resolution failed
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.checkLookupMethods(AutowiredAnnotationBeanPostProcessor.java:497)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.determineCandidateConstructors(AutowiredAnnotationBeanPostProcessor.java:367)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.determineConstructorsFromBeanPostProcessors(AbstractAutowireCapableBeanFactory.java:1294)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1189)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:562)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:522)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:325)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:323)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:204)
+	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.getOrderedBeansOfType(ServletContextInitializerBeans.java:210)
+	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.addAsRegistrationBean(ServletContextInitializerBeans.java:173)
+	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.addAsRegistrationBean(ServletContextInitializerBeans.java:168)
+	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.addAdaptableBeans(ServletContextInitializerBeans.java:153)
+	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.<init>(ServletContextInitializerBeans.java:86)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.getServletContextInitializerBeans(ServletWebServerApplicationContext.java:266)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.selfInitialize(ServletWebServerApplicationContext.java:240)
+	at org.springframework.boot.web.embedded.tomcat.TomcatStarter.onStartup(TomcatStarter.java:52)
+	at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:4866)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:171)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1332)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1322)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75)
+	at java.base/java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:145)
+	at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:866)
+	at org.apache.catalina.core.StandardHost.startInternal(StandardHost.java:845)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:171)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1332)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1322)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75)
+	at java.base/java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:145)
+	at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:866)
+	at org.apache.catalina.core.StandardEngine.startInternal(StandardEngine.java:240)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:171)
+	at org.apache.catalina.core.StandardService.startInternal(StandardService.java:433)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:171)
+	at org.apache.catalina.core.StandardServer.startInternal(StandardServer.java:921)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:171)
+	at org.apache.catalina.startup.Tomcat.start(Tomcat.java:437)
+	at org.springframework.boot.web.embedded.tomcat.TomcatWebServer.initialize(TomcatWebServer.java:126)
+	... 13 common frames omitted
+Caused by: java.lang.IllegalStateException: Failed to introspect Class [com.remiges.adv_java_assignment.security.JwtAuthenticationFilter] from ClassLoader [jdk.internal.loader.ClassLoaders$AppClassLoader@4f2410ac]
+	at org.springframework.util.ReflectionUtils.getDeclaredMethods(ReflectionUtils.java:483)
+	at org.springframework.util.ReflectionUtils.doWithLocalMethods(ReflectionUtils.java:320)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.checkLookupMethods(AutowiredAnnotationBeanPostProcessor.java:475)
+	... 54 common frames omitted
+Caused by: java.lang.NoClassDefFoundError: io/jsonwebtoken/ExpiredJwtException
+	at java.base/java.lang.Class.getDeclaredMethods0(Native Method)
+	at java.base/java.lang.Class.privateGetDeclaredMethods(Class.java:3578)
+	at java.base/java.lang.Class.getDeclaredMethods(Class.java:2676)
+	at org.springframework.util.ReflectionUtils.getDeclaredMethods(ReflectionUtils.java:465)
+	... 56 common frames omitted
+Caused by: java.lang.ClassNotFoundException: io.jsonwebtoken.ExpiredJwtException
+	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:641)
+	at java.base/jdk.internal.loader.ClassLoaders$AppClassLoader.loadClass(ClassLoaders.java:188)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:526)
+	... 60 common frames omitted
+2024-03-18 15:53:17,551 c.r.a.AdvJavaAssignmentApplication - Starting AdvJavaAssignmentApplication using Java 21.0.2 with PID 1149386 (/home/surajg/Downloads/advanced-java-surajg_1/target/classes started by surajg in /home/surajg/Downloads/advanced-java-surajg_1)
+2024-03-18 15:53:17,551 c.r.a.AdvJavaAssignmentApplication - Running with Spring Boot v3.2.3, Spring v6.1.4
+2024-03-18 15:53:17,552 c.r.a.AdvJavaAssignmentApplication - No active profile set, falling back to 1 default profile: "default"
+2024-03-18 15:53:18,246 o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2024-03-18 15:53:18,247 o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-03-18 15:53:18,355 o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 100 ms. Found 4 JPA repository interfaces.
+2024-03-18 15:53:18,369 o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2024-03-18 15:53:18,370 o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2024-03-18 15:53:18,381 o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.remiges.adv_java_assignment.repo.DeptRepo; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2024-03-18 15:53:18,381 o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.remiges.adv_java_assignment.repo.EmployeeRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2024-03-18 15:53:18,381 o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.remiges.adv_java_assignment.repo.EmployeeShadowRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2024-03-18 15:53:18,381 o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.remiges.adv_java_assignment.repo.RankRepo; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2024-03-18 15:53:18,381 o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 5 ms. Found 0 Redis repository interfaces.
+2024-03-18 15:53:18,869 o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2024-03-18 15:53:18,879 o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2024-03-18 15:53:18,881 o.a.catalina.core.StandardService - Starting service [Tomcat]
+2024-03-18 15:53:18,882 o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.19]
+2024-03-18 15:53:18,926 o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2024-03-18 15:53:18,927 o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1334 ms
+2024-03-18 15:53:19,106 c.r.a.s.JwtAuthenticationFilter - Filter 'jwtAuthenticationFilter' configured for use
+2024-03-18 15:53:19,243 o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-03-18 15:53:19,293 org.hibernate.Version - HHH000412: Hibernate ORM core version 6.4.4.Final
+2024-03-18 15:53:19,320 o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2024-03-18 15:53:19,526 o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-03-18 15:53:19,550 com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2024-03-18 15:53:19,825 com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@3460e4ed
+2024-03-18 15:53:19,826 com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2024-03-18 15:53:19,859 org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-03-18 15:53:20,701 o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-03-18 15:53:20,760 o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-03-18 15:53:20,800 o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'securityConfig': Unsatisfied dependency expressed through field 'point': No qualifying bean of type 'com.remiges.adv_java_assignment.security.JwtAuthenticationEntryPoint' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
+2024-03-18 15:53:20,801 o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-03-18 15:53:20,803 com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2024-03-18 15:53:20,813 com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2024-03-18 15:53:20,814 o.a.catalina.core.StandardService - Stopping service [Tomcat]
+2024-03-18 15:53:20,824 o.s.b.a.l.ConditionEvaluationReportLogger - 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2024-03-18 15:53:20,840 o.s.b.d.LoggingFailureAnalysisReporter - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Field point in com.remiges.adv_java_assignment.config.SecurityConfig required a bean of type 'com.remiges.adv_java_assignment.security.JwtAuthenticationEntryPoint' that could not be found.
+
+The injection point has the following annotations:
+	- @org.springframework.beans.factory.annotation.Autowired(required=true)
+
+
+Action:
+
+Consider defining a bean of type 'com.remiges.adv_java_assignment.security.JwtAuthenticationEntryPoint' in your configuration.
+
+2024-03-18 15:54:36,703 c.r.a.AdvJavaAssignmentApplication - Starting AdvJavaAssignmentApplication using Java 21.0.2 with PID 1149984 (/home/surajg/Downloads/advanced-java-surajg_1/target/classes started by surajg in /home/surajg/Downloads/advanced-java-surajg_1)
+2024-03-18 15:54:36,703 c.r.a.AdvJavaAssignmentApplication - Running with Spring Boot v3.2.3, Spring v6.1.4
+2024-03-18 15:54:36,704 c.r.a.AdvJavaAssignmentApplication - No active profile set, falling back to 1 default profile: "default"
+2024-03-18 15:54:37,387 o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2024-03-18 15:54:37,388 o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-03-18 15:54:37,496 o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 101 ms. Found 4 JPA repository interfaces.
+2024-03-18 15:54:37,517 o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2024-03-18 15:54:37,517 o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2024-03-18 15:54:37,529 o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.remiges.adv_java_assignment.repo.DeptRepo; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2024-03-18 15:54:37,530 o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.remiges.adv_java_assignment.repo.EmployeeRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2024-03-18 15:54:37,530 o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.remiges.adv_java_assignment.repo.EmployeeShadowRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2024-03-18 15:54:37,530 o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.remiges.adv_java_assignment.repo.RankRepo; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2024-03-18 15:54:37,530 o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 7 ms. Found 0 Redis repository interfaces.
+2024-03-18 15:54:38,003 o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2024-03-18 15:54:38,016 o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2024-03-18 15:54:38,019 o.a.catalina.core.StandardService - Starting service [Tomcat]
+2024-03-18 15:54:38,020 o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.19]
+2024-03-18 15:54:38,083 o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2024-03-18 15:54:38,085 o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1328 ms
+2024-03-18 15:54:38,241 c.r.a.s.JwtAuthenticationFilter - Filter 'jwtAuthenticationFilter' configured for use
+2024-03-18 15:54:38,357 o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-03-18 15:54:38,401 org.hibernate.Version - HHH000412: Hibernate ORM core version 6.4.4.Final
+2024-03-18 15:54:38,423 o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2024-03-18 15:54:38,604 o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-03-18 15:54:38,633 com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2024-03-18 15:54:38,936 com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@2efcc0b3
+2024-03-18 15:54:38,937 com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2024-03-18 15:54:38,958 org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-03-18 15:54:39,812 o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-03-18 15:54:39,875 o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-03-18 15:54:40,170 o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-03-18 15:54:40,551 o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-03-18 15:54:40,764 o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@58e0f079, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@45b37003, org.springframework.security.web.context.SecurityContextHolderFilter@3979c6e8, org.springframework.security.web.header.HeaderWriterFilter@4d0b8b8b, org.springframework.security.web.authentication.logout.LogoutFilter@5379488c, com.remiges.adv_java_assignment.security.JwtAuthenticationFilter@172f4514, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@38a3c078, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@4d6fa22c, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@3e60be48, org.springframework.security.web.session.SessionManagementFilter@aeb8ee2, org.springframework.security.web.access.ExceptionTranslationFilter@734eada1, org.springframework.security.web.access.intercept.AuthorizationFilter@7234db3]
+2024-03-18 15:54:41,089 o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2024-03-18 15:54:41,103 o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path ''
+2024-03-18 15:54:41,112 c.r.a.AdvJavaAssignmentApplication - Started AdvJavaAssignmentApplication in 4.686 seconds (process running for 5.108)
+2024-03-18 15:54:50,697 o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-03-18 15:54:50,697 o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2024-03-18 15:54:50,698 o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2024-03-18 15:54:50,711 o.s.web.filter.OncePerRequestFilter -  Header :  null
+2024-03-18 15:54:50,711 o.s.web.filter.OncePerRequestFilter - Invalid Header Value !! 
+2024-03-18 15:56:55,153 o.s.web.filter.OncePerRequestFilter -  Header :  Basic U3VyYWo6U3VyYWo=
+2024-03-18 15:56:55,153 o.s.web.filter.OncePerRequestFilter - Invalid Header Value !! 
+2024-03-18 15:58:38,757 o.s.web.filter.OncePerRequestFilter -  Header :  Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJTdXJhaiIsImlhdCI6MTcxMDc1NzQ5MCwiZXhwIjoxNzEwNzc1NDkwfQ.XaVFkPv2ooGE_6bNXMWFJkvfuW8XzGHXigBGUbHKaFCdbPuOyh87jDl8v2kX__Up162NsNap-8ZmDveCk-fH2A
+2024-03-18 15:59:04,612 o.s.web.filter.OncePerRequestFilter -  Header :  Basic U3VyYWo6U3VyYWo=
+2024-03-18 15:59:04,612 o.s.web.filter.OncePerRequestFilter - Invalid Header Value !! 
+2024-03-18 15:59:05,702 o.s.web.filter.OncePerRequestFilter -  Header :  Basic U3VyYWo6U3VyYWo=
+2024-03-18 15:59:05,702 o.s.web.filter.OncePerRequestFilter - Invalid Header Value !! 
+2024-03-18 16:01:41,839 o.s.web.filter.OncePerRequestFilter -  Header :  Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJTdXJhaiIsImlhdCI6MTcxMDc1NzQ5MCwiZXhwIjoxNzEwNzc1NDkwfQ.XaVFkPv2ooGE_6bNXMWFJkvfuW8XzGHXigBGUbHKaFCdbPuOyh87jDl8v2kX__Up162NsNap-8ZmDveCk-fH2A
+2024-03-18 16:01:41,850 o.s.h.c.j.MappingJackson2HttpMessageConverter - Failed to evaluate Jackson deserialization for type [[simple type, class com.remiges.adv_java_assignment.entity.Employee]]: com.fasterxml.jackson.databind.exc.InvalidDefinitionException: Cannot handle managed/back reference 'defaultReference': back reference type (`java.util.List<com.remiges.adv_java_assignment.entity.Employee>`) not compatible with managed type (com.remiges.adv_java_assignment.entity.Employee)
+2024-03-18 16:01:41,853 o.s.h.c.j.MappingJackson2HttpMessageConverter - Failed to evaluate Jackson deserialization for type [[simple type, class com.remiges.adv_java_assignment.entity.Employee]]: com.fasterxml.jackson.databind.exc.InvalidDefinitionException: Cannot handle managed/back reference 'defaultReference': back reference type (`java.util.List<com.remiges.adv_java_assignment.entity.Employee>`) not compatible with managed type (com.remiges.adv_java_assignment.entity.Employee)
+2024-03-18 16:01:41,855 o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.web.HttpMediaTypeNotSupportedException: Content-Type 'application/json;charset=UTF-8' is not supported]
+2024-03-18 16:03:04,438 o.s.web.filter.OncePerRequestFilter -  Header :  Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJTdXJhaiIsImlhdCI6MTcxMDc1NzQ5MCwiZXhwIjoxNzEwNzc1NDkwfQ.XaVFkPv2ooGE_6bNXMWFJkvfuW8XzGHXigBGUbHKaFCdbPuOyh87jDl8v2kX__Up162NsNap-8ZmDveCk-fH2A
+2024-03-18 16:03:04,443 o.s.h.c.j.MappingJackson2HttpMessageConverter - Failed to evaluate Jackson deserialization for type [[simple type, class com.remiges.adv_java_assignment.entity.Employee]]: com.fasterxml.jackson.databind.exc.InvalidDefinitionException: Cannot handle managed/back reference 'defaultReference': back reference type (`java.util.List<com.remiges.adv_java_assignment.entity.Employee>`) not compatible with managed type (com.remiges.adv_java_assignment.entity.Employee)
+2024-03-18 16:03:04,444 o.s.h.c.j.MappingJackson2HttpMessageConverter - Failed to evaluate Jackson deserialization for type [[simple type, class com.remiges.adv_java_assignment.entity.Employee]]: com.fasterxml.jackson.databind.exc.InvalidDefinitionException: Cannot handle managed/back reference 'defaultReference': back reference type (`java.util.List<com.remiges.adv_java_assignment.entity.Employee>`) not compatible with managed type (com.remiges.adv_java_assignment.entity.Employee)
+2024-03-18 16:03:04,445 o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.web.HttpMediaTypeNotSupportedException: Content-Type 'application/json;charset=UTF-8' is not supported]
+2024-03-18 16:04:05,329 o.s.web.filter.OncePerRequestFilter -  Header :  Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJTdXJhaiIsImlhdCI6MTcxMDc1NzQ5MCwiZXhwIjoxNzEwNzc1NDkwfQ.XaVFkPv2ooGE_6bNXMWFJkvfuW8XzGHXigBGUbHKaFCdbPuOyh87jDl8v2kX__Up162NsNap-8ZmDveCk-fH2A
+2024-03-18 16:04:05,335 o.s.h.c.j.MappingJackson2HttpMessageConverter - Failed to evaluate Jackson deserialization for type [[simple type, class com.remiges.adv_java_assignment.entity.Employee]]: com.fasterxml.jackson.databind.exc.InvalidDefinitionException: Cannot handle managed/back reference 'defaultReference': back reference type (`java.util.List<com.remiges.adv_java_assignment.entity.Employee>`) not compatible with managed type (com.remiges.adv_java_assignment.entity.Employee)
+2024-03-18 16:04:05,336 o.s.h.c.j.MappingJackson2HttpMessageConverter - Failed to evaluate Jackson deserialization for type [[simple type, class com.remiges.adv_java_assignment.entity.Employee]]: com.fasterxml.jackson.databind.exc.InvalidDefinitionException: Cannot handle managed/back reference 'defaultReference': back reference type (`java.util.List<com.remiges.adv_java_assignment.entity.Employee>`) not compatible with managed type (com.remiges.adv_java_assignment.entity.Employee)
+2024-03-18 16:04:05,337 o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.web.HttpMediaTypeNotSupportedException: Content-Type 'application/json;charset=UTF-8' is not supported]
+2024-03-18 16:04:35,724 o.s.web.filter.OncePerRequestFilter -  Header :  Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJTdXJhaiIsImlhdCI6MTcxMDc1NzQ5MCwiZXhwIjoxNzEwNzc1NDkwfQ.XaVFkPv2ooGE_6bNXMWFJkvfuW8XzGHXigBGUbHKaFCdbPuOyh87jDl8v2kX__Up162NsNap-8ZmDveCk-fH2A
+2024-03-18 16:04:35,728 o.s.h.c.j.MappingJackson2HttpMessageConverter - Failed to evaluate Jackson deserialization for type [[simple type, class com.remiges.adv_java_assignment.entity.Employee]]: com.fasterxml.jackson.databind.exc.InvalidDefinitionException: Cannot handle managed/back reference 'defaultReference': back reference type (`java.util.List<com.remiges.adv_java_assignment.entity.Employee>`) not compatible with managed type (com.remiges.adv_java_assignment.entity.Employee)
+2024-03-18 16:04:35,730 o.s.h.c.j.MappingJackson2HttpMessageConverter - Failed to evaluate Jackson deserialization for type [[simple type, class com.remiges.adv_java_assignment.entity.Employee]]: com.fasterxml.jackson.databind.exc.InvalidDefinitionException: Cannot handle managed/back reference 'defaultReference': back reference type (`java.util.List<com.remiges.adv_java_assignment.entity.Employee>`) not compatible with managed type (com.remiges.adv_java_assignment.entity.Employee)
+2024-03-18 16:04:35,730 o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.web.HttpMediaTypeNotSupportedException: Content-Type 'application/json;charset=UTF-8' is not supported]
+2024-03-18 16:06:17,833 o.s.web.filter.OncePerRequestFilter -  Header :  Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJTdXJhaiIsImlhdCI6MTcxMDc1NzQ5MCwiZXhwIjoxNzEwNzc1NDkwfQ.XaVFkPv2ooGE_6bNXMWFJkvfuW8XzGHXigBGUbHKaFCdbPuOyh87jDl8v2kX__Up162NsNap-8ZmDveCk-fH2A
+2024-03-18 16:07:08,519 o.s.web.filter.OncePerRequestFilter -  Header :  Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJTdXJhaiIsImlhdCI6MTcxMDc1NzQ5MCwiZXhwIjoxNzEwNzc1NDkwfQ.XaVFkPv2ooGE_6bNXMWFJkvfuW8XzGHXigBGUbHKaFCdbPuOyh87jDl8v2kX__Up162NsNap-8ZmDveCk-fH2A
+2024-03-18 16:07:53,637 o.s.web.filter.OncePerRequestFilter -  Header :  Basic U3VyYWo6U3VyYWo=
+2024-03-18 16:07:53,637 o.s.web.filter.OncePerRequestFilter - Invalid Header Value !! 
+2024-03-18 16:08:17,515 o.s.web.filter.OncePerRequestFilter -  Header :  Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJTdXJhaiIsImlhdCI6MTcxMDc1NzQ5MCwiZXhwIjoxNzEwNzc1NDkwfQ.XaVFkPv2ooGE_6bNXMWFJkvfuW8XzGHXigBGUbHKaFCdbPuOyh87jDl8v2kX__Up162NsNap-8ZmDveCk-fH2A
+2024-03-18 16:09:46,672 o.s.web.filter.OncePerRequestFilter -  Header :  Basic U3VyYWo6U3VyYWo=
+2024-03-18 16:09:46,672 o.s.web.filter.OncePerRequestFilter - Invalid Header Value !! 
+2024-03-18 16:10:28,183 o.s.web.filter.OncePerRequestFilter -  Header :  Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJTdXJhaiIsImlhdCI6MTcxMDc1NzQ5MCwiZXhwIjoxNzEwNzc1NDkwfQ.XaVFkPv2ooGE_6bNXMWFJkvfuW8XzGHXigBGUbHKaFCdbPuOyh87jDl8v2kX__Up162NsNap-8ZmDveCk-fH2A
+2024-03-18 17:36:14,748 o.s.web.filter.OncePerRequestFilter -  Header :  null
+2024-03-18 17:36:14,748 o.s.web.filter.OncePerRequestFilter - Invalid Header Value !! 
+2024-03-18 17:36:17,887 o.s.web.filter.OncePerRequestFilter -  Header :  null
+2024-03-18 17:36:17,887 o.s.web.filter.OncePerRequestFilter - Invalid Header Value !! 
+2024-03-18 17:36:43,440 o.s.web.filter.OncePerRequestFilter -  Header :  Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJTdXJhaiIsImlhdCI6MTcxMDc2MzU3NywiZXhwIjoxNzEwNzgxNTc3fQ.tPUiegnwA_tXw5pMKbjSrknKGYbeh6kUUm29vWw47o51FQY7avzDXirXW8wlJpZmgPDb-hWiuea445inuKtTgQ
+2024-03-18 17:37:08,789 o.s.web.filter.OncePerRequestFilter -  Header :  Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJTdXJhaiIsImlhdCI6MTcxMDc2MzU3NywiZXhwIjoxNzEwNzgxNTc3fQ.tPUiegnwA_tXw5pMKbjSrknKGYbeh6kUUm29vWw47o51FQY7avzDXirXW8wlJpZmgPDb-hWiuea445inuKtTgQ
+2024-03-18 17:37:30,350 o.s.web.filter.OncePerRequestFilter -  Header :  Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJTdXJhaiIsImlhdCI6MTcxMDc2MzU3NywiZXhwIjoxNzEwNzgxNTc3fQ.tPUiegnwA_tXw5pMKbjSrknKGYbeh6kUUm29vWw47o51FQY7avzDXirXW8wlJpZmgPDb-hWiuea445inuKtTgQ
+2024-03-18 17:37:30,353 o.s.h.c.j.MappingJackson2HttpMessageConverter - Failed to evaluate Jackson deserialization for type [[simple type, class com.remiges.adv_java_assignment.entity.Employee]]: com.fasterxml.jackson.databind.exc.InvalidDefinitionException: Cannot handle managed/back reference 'defaultReference': back reference type (`java.util.List<com.remiges.adv_java_assignment.entity.Employee>`) not compatible with managed type (com.remiges.adv_java_assignment.entity.Employee)
+2024-03-18 17:37:30,354 o.s.h.c.j.MappingJackson2HttpMessageConverter - Failed to evaluate Jackson deserialization for type [[simple type, class com.remiges.adv_java_assignment.entity.Employee]]: com.fasterxml.jackson.databind.exc.InvalidDefinitionException: Cannot handle managed/back reference 'defaultReference': back reference type (`java.util.List<com.remiges.adv_java_assignment.entity.Employee>`) not compatible with managed type (com.remiges.adv_java_assignment.entity.Employee)
+2024-03-18 17:37:30,355 o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.web.HttpMediaTypeNotSupportedException: Content-Type 'application/json;charset=UTF-8' is not supported]
+2024-03-18 17:38:06,484 o.s.web.filter.OncePerRequestFilter -  Header :  Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJTdXJhaiIsImlhdCI6MTcxMDc2MzU3NywiZXhwIjoxNzEwNzgxNTc3fQ.tPUiegnwA_tXw5pMKbjSrknKGYbeh6kUUm29vWw47o51FQY7avzDXirXW8wlJpZmgPDb-hWiuea445inuKtTgQ
+2024-03-18 17:38:06,487 o.s.h.c.j.MappingJackson2HttpMessageConverter - Failed to evaluate Jackson deserialization for type [[simple type, class com.remiges.adv_java_assignment.entity.Employee]]: com.fasterxml.jackson.databind.exc.InvalidDefinitionException: Cannot handle managed/back reference 'defaultReference': back reference type (`java.util.List<com.remiges.adv_java_assignment.entity.Employee>`) not compatible with managed type (com.remiges.adv_java_assignment.entity.Employee)
+2024-03-18 17:38:06,488 o.s.h.c.j.MappingJackson2HttpMessageConverter - Failed to evaluate Jackson deserialization for type [[simple type, class com.remiges.adv_java_assignment.entity.Employee]]: com.fasterxml.jackson.databind.exc.InvalidDefinitionException: Cannot handle managed/back reference 'defaultReference': back reference type (`java.util.List<com.remiges.adv_java_assignment.entity.Employee>`) not compatible with managed type (com.remiges.adv_java_assignment.entity.Employee)
+2024-03-18 17:38:06,488 o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.web.HttpMediaTypeNotSupportedException: Content-Type 'application/json;charset=UTF-8' is not supported]
+2024-03-18 17:38:43,253 o.s.web.filter.OncePerRequestFilter -  Header :  Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJTdXJhaiIsImlhdCI6MTcxMDc2MzU3NywiZXhwIjoxNzEwNzgxNTc3fQ.tPUiegnwA_tXw5pMKbjSrknKGYbeh6kUUm29vWw47o51FQY7avzDXirXW8wlJpZmgPDb-hWiuea445inuKtTgQ
+2024-03-18 17:38:43,257 o.s.h.c.j.MappingJackson2HttpMessageConverter - Failed to evaluate Jackson deserialization for type [[simple type, class com.remiges.adv_java_assignment.entity.Employee]]: com.fasterxml.jackson.databind.exc.InvalidDefinitionException: Cannot handle managed/back reference 'defaultReference': back reference type (`java.util.List<com.remiges.adv_java_assignment.entity.Employee>`) not compatible with managed type (com.remiges.adv_java_assignment.entity.Employee)
+2024-03-18 17:38:43,259 o.s.h.c.j.MappingJackson2HttpMessageConverter - Failed to evaluate Jackson deserialization for type [[simple type, class com.remiges.adv_java_assignment.entity.Employee]]: com.fasterxml.jackson.databind.exc.InvalidDefinitionException: Cannot handle managed/back reference 'defaultReference': back reference type (`java.util.List<com.remiges.adv_java_assignment.entity.Employee>`) not compatible with managed type (com.remiges.adv_java_assignment.entity.Employee)
+2024-03-18 17:38:43,259 o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.web.HttpMediaTypeNotSupportedException: Content-Type 'application/json;charset=UTF-8' is not supported]
+2024-03-18 17:39:44,613 o.s.web.filter.OncePerRequestFilter -  Header :  Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJTdXJhaiIsImlhdCI6MTcxMDc2MzU3NywiZXhwIjoxNzEwNzgxNTc3fQ.tPUiegnwA_tXw5pMKbjSrknKGYbeh6kUUm29vWw47o51FQY7avzDXirXW8wlJpZmgPDb-hWiuea445inuKtTgQ
+2024-03-18 17:39:44,617 o.s.h.c.j.MappingJackson2HttpMessageConverter - Failed to evaluate Jackson deserialization for type [[simple type, class com.remiges.adv_java_assignment.entity.Employee]]: com.fasterxml.jackson.databind.exc.InvalidDefinitionException: Cannot handle managed/back reference 'defaultReference': back reference type (`java.util.List<com.remiges.adv_java_assignment.entity.Employee>`) not compatible with managed type (com.remiges.adv_java_assignment.entity.Employee)
+2024-03-18 17:39:44,618 o.s.h.c.j.MappingJackson2HttpMessageConverter - Failed to evaluate Jackson deserialization for type [[simple type, class com.remiges.adv_java_assignment.entity.Employee]]: com.fasterxml.jackson.databind.exc.InvalidDefinitionException: Cannot handle managed/back reference 'defaultReference': back reference type (`java.util.List<com.remiges.adv_java_assignment.entity.Employee>`) not compatible with managed type (com.remiges.adv_java_assignment.entity.Employee)
+2024-03-18 17:39:44,618 o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.web.HttpMediaTypeNotSupportedException: Content-Type 'application/json;charset=UTF-8' is not supported]
+2024-03-18 17:40:08,794 o.s.web.filter.OncePerRequestFilter -  Header :  Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJTdXJhaiIsImlhdCI6MTcxMDc2MzU3NywiZXhwIjoxNzEwNzgxNTc3fQ.tPUiegnwA_tXw5pMKbjSrknKGYbeh6kUUm29vWw47o51FQY7avzDXirXW8wlJpZmgPDb-hWiuea445inuKtTgQ
+2024-03-18 17:40:08,797 o.s.h.c.j.MappingJackson2HttpMessageConverter - Failed to evaluate Jackson deserialization for type [[simple type, class com.remiges.adv_java_assignment.entity.Employee]]: com.fasterxml.jackson.databind.exc.InvalidDefinitionException: Cannot handle managed/back reference 'defaultReference': back reference type (`java.util.List<com.remiges.adv_java_assignment.entity.Employee>`) not compatible with managed type (com.remiges.adv_java_assignment.entity.Employee)
+2024-03-18 17:40:08,798 o.s.h.c.j.MappingJackson2HttpMessageConverter - Failed to evaluate Jackson deserialization for type [[simple type, class com.remiges.adv_java_assignment.entity.Employee]]: com.fasterxml.jackson.databind.exc.InvalidDefinitionException: Cannot handle managed/back reference 'defaultReference': back reference type (`java.util.List<com.remiges.adv_java_assignment.entity.Employee>`) not compatible with managed type (com.remiges.adv_java_assignment.entity.Employee)
+2024-03-18 17:40:08,798 o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.web.HttpMediaTypeNotSupportedException: Content-Type 'application/json;charset=UTF-8' is not supported]
+2024-03-18 17:40:51,528 o.s.web.filter.OncePerRequestFilter -  Header :  null
+2024-03-18 17:40:51,528 o.s.web.filter.OncePerRequestFilter - Invalid Header Value !! 
+2024-03-18 17:42:59,956 o.s.web.filter.OncePerRequestFilter -  Header :  Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJTdXJhaiIsImlhdCI6MTcxMDc2Mzg1MSwiZXhwIjoxNzEwNzgxODUxfQ.UuZdsWIzg1dd7ZIkFKX2gEPMe27o78c-KYDUdmlzoZovcDA3kBwusKkk9WT7JUxAv61cUAoQxEgqpQBBZ4sTDw
+2024-03-18 17:42:59,959 o.s.h.c.j.MappingJackson2HttpMessageConverter - Failed to evaluate Jackson deserialization for type [[simple type, class com.remiges.adv_java_assignment.entity.Employee]]: com.fasterxml.jackson.databind.exc.InvalidDefinitionException: Cannot handle managed/back reference 'defaultReference': back reference type (`java.util.List<com.remiges.adv_java_assignment.entity.Employee>`) not compatible with managed type (com.remiges.adv_java_assignment.entity.Employee)
+2024-03-18 17:42:59,960 o.s.h.c.j.MappingJackson2HttpMessageConverter - Failed to evaluate Jackson deserialization for type [[simple type, class com.remiges.adv_java_assignment.entity.Employee]]: com.fasterxml.jackson.databind.exc.InvalidDefinitionException: Cannot handle managed/back reference 'defaultReference': back reference type (`java.util.List<com.remiges.adv_java_assignment.entity.Employee>`) not compatible with managed type (com.remiges.adv_java_assignment.entity.Employee)
+2024-03-18 17:42:59,960 o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.web.HttpMediaTypeNotSupportedException: Content-Type 'application/json;charset=UTF-8' is not supported]
+2024-03-18 17:43:30,301 o.s.web.filter.OncePerRequestFilter -  Header :  Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJTdXJhaiIsImlhdCI6MTcxMDc2Mzg1MSwiZXhwIjoxNzEwNzgxODUxfQ.UuZdsWIzg1dd7ZIkFKX2gEPMe27o78c-KYDUdmlzoZovcDA3kBwusKkk9WT7JUxAv61cUAoQxEgqpQBBZ4sTDw
+2024-03-18 17:44:26,477 o.s.web.filter.OncePerRequestFilter -  Header :  Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJTdXJhaiIsImlhdCI6MTcxMDc2Mzg1MSwiZXhwIjoxNzEwNzgxODUxfQ.UuZdsWIzg1dd7ZIkFKX2gEPMe27o78c-KYDUdmlzoZovcDA3kBwusKkk9WT7JUxAv61cUAoQxEgqpQBBZ4sTDw
+2024-03-18 17:44:26,481 o.s.h.c.j.MappingJackson2HttpMessageConverter - Failed to evaluate Jackson deserialization for type [[simple type, class com.remiges.adv_java_assignment.entity.Employee]]: com.fasterxml.jackson.databind.exc.InvalidDefinitionException: Cannot handle managed/back reference 'defaultReference': back reference type (`java.util.List<com.remiges.adv_java_assignment.entity.Employee>`) not compatible with managed type (com.remiges.adv_java_assignment.entity.Employee)
+2024-03-18 17:44:26,481 o.s.h.c.j.MappingJackson2HttpMessageConverter - Failed to evaluate Jackson deserialization for type [[simple type, class com.remiges.adv_java_assignment.entity.Employee]]: com.fasterxml.jackson.databind.exc.InvalidDefinitionException: Cannot handle managed/back reference 'defaultReference': back reference type (`java.util.List<com.remiges.adv_java_assignment.entity.Employee>`) not compatible with managed type (com.remiges.adv_java_assignment.entity.Employee)
+2024-03-18 17:44:26,482 o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.web.HttpMediaTypeNotSupportedException: Content-Type 'application/json;charset=UTF-8' is not supported]
+2024-03-18 17:48:10,226 o.s.web.filter.OncePerRequestFilter -  Header :  Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJTdXJhaiIsImlhdCI6MTcxMDc2Mzg1MSwiZXhwIjoxNzEwNzgxODUxfQ.UuZdsWIzg1dd7ZIkFKX2gEPMe27o78c-KYDUdmlzoZovcDA3kBwusKkk9WT7JUxAv61cUAoQxEgqpQBBZ4sTDw
+2024-03-18 17:49:25,391 o.s.web.filter.OncePerRequestFilter -  Header :  Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJTdXJhaiIsImlhdCI6MTcxMDc2Mzg1MSwiZXhwIjoxNzEwNzgxODUxfQ.UuZdsWIzg1dd7ZIkFKX2gEPMe27o78c-KYDUdmlzoZovcDA3kBwusKkk9WT7JUxAv61cUAoQxEgqpQBBZ4sTDw
+2024-03-18 17:49:25,395 o.s.h.c.j.MappingJackson2HttpMessageConverter - Failed to evaluate Jackson deserialization for type [[simple type, class com.remiges.adv_java_assignment.entity.Employee]]: com.fasterxml.jackson.databind.exc.InvalidDefinitionException: Cannot handle managed/back reference 'defaultReference': back reference type (`java.util.List<com.remiges.adv_java_assignment.entity.Employee>`) not compatible with managed type (com.remiges.adv_java_assignment.entity.Employee)
+2024-03-18 17:49:25,396 o.s.h.c.j.MappingJackson2HttpMessageConverter - Failed to evaluate Jackson deserialization for type [[simple type, class com.remiges.adv_java_assignment.entity.Employee]]: com.fasterxml.jackson.databind.exc.InvalidDefinitionException: Cannot handle managed/back reference 'defaultReference': back reference type (`java.util.List<com.remiges.adv_java_assignment.entity.Employee>`) not compatible with managed type (com.remiges.adv_java_assignment.entity.Employee)
+2024-03-18 17:49:25,396 o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.web.HttpMediaTypeNotSupportedException: Content-Type 'application/json;charset=UTF-8' is not supported]
+2024-03-18 17:49:55,703 o.s.web.filter.OncePerRequestFilter -  Header :  Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJTdXJhaiIsImlhdCI6MTcxMDc2Mzg1MSwiZXhwIjoxNzEwNzgxODUxfQ.UuZdsWIzg1dd7ZIkFKX2gEPMe27o78c-KYDUdmlzoZovcDA3kBwusKkk9WT7JUxAv61cUAoQxEgqpQBBZ4sTDw
+2024-03-18 17:49:55,706 o.s.h.c.j.MappingJackson2HttpMessageConverter - Failed to evaluate Jackson deserialization for type [[simple type, class com.remiges.adv_java_assignment.entity.Employee]]: com.fasterxml.jackson.databind.exc.InvalidDefinitionException: Cannot handle managed/back reference 'defaultReference': back reference type (`java.util.List<com.remiges.adv_java_assignment.entity.Employee>`) not compatible with managed type (com.remiges.adv_java_assignment.entity.Employee)
+2024-03-18 17:49:55,707 o.s.h.c.j.MappingJackson2HttpMessageConverter - Failed to evaluate Jackson deserialization for type [[simple type, class com.remiges.adv_java_assignment.entity.Employee]]: com.fasterxml.jackson.databind.exc.InvalidDefinitionException: Cannot handle managed/back reference 'defaultReference': back reference type (`java.util.List<com.remiges.adv_java_assignment.entity.Employee>`) not compatible with managed type (com.remiges.adv_java_assignment.entity.Employee)
+2024-03-18 17:49:55,707 o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.web.HttpMediaTypeNotSupportedException: Content-Type 'application/json;charset=UTF-8' is not supported]
+2024-03-18 17:50:59,231 o.s.web.filter.OncePerRequestFilter -  Header :  null
+2024-03-18 17:50:59,232 o.s.web.filter.OncePerRequestFilter - Invalid Header Value !! 
+2024-03-18 17:51:35,752 o.s.web.filter.OncePerRequestFilter -  Header :  Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJTdXJhaiIsImlhdCI6MTcxMDc2NDQ1OSwiZXhwIjoxNzEwNzgyNDU5fQ.7YYr79c7Tr1QCr7l8TkH6n0A_vrBlqWFCGm7yujLS_ugFSUkSJOtBlTBdsqiHOxwB18-Lu7kPhmCCmoI5p1HTg
+2024-03-18 17:51:35,758 o.s.h.c.j.MappingJackson2HttpMessageConverter - Failed to evaluate Jackson deserialization for type [[simple type, class com.remiges.adv_java_assignment.entity.Employee]]: com.fasterxml.jackson.databind.exc.InvalidDefinitionException: Cannot handle managed/back reference 'defaultReference': back reference type (`java.util.List<com.remiges.adv_java_assignment.entity.Employee>`) not compatible with managed type (com.remiges.adv_java_assignment.entity.Employee)
+2024-03-18 17:51:35,759 o.s.h.c.j.MappingJackson2HttpMessageConverter - Failed to evaluate Jackson deserialization for type [[simple type, class com.remiges.adv_java_assignment.entity.Employee]]: com.fasterxml.jackson.databind.exc.InvalidDefinitionException: Cannot handle managed/back reference 'defaultReference': back reference type (`java.util.List<com.remiges.adv_java_assignment.entity.Employee>`) not compatible with managed type (com.remiges.adv_java_assignment.entity.Employee)
+2024-03-18 17:51:35,760 o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.web.HttpMediaTypeNotSupportedException: Content-Type 'application/json;charset=UTF-8' is not supported]
+2024-03-18 17:52:51,138 o.s.web.filter.OncePerRequestFilter -  Header :  Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJTdXJhaiIsImlhdCI6MTcxMDc2NDQ1OSwiZXhwIjoxNzEwNzgyNDU5fQ.7YYr79c7Tr1QCr7l8TkH6n0A_vrBlqWFCGm7yujLS_ugFSUkSJOtBlTBdsqiHOxwB18-Lu7kPhmCCmoI5p1HTg
+2024-03-18 17:53:27,819 o.s.web.filter.OncePerRequestFilter -  Header :  Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJTdXJhaiIsImlhdCI6MTcxMDc2NDQ1OSwiZXhwIjoxNzEwNzgyNDU5fQ.7YYr79c7Tr1QCr7l8TkH6n0A_vrBlqWFCGm7yujLS_ugFSUkSJOtBlTBdsqiHOxwB18-Lu7kPhmCCmoI5p1HTg
+2024-03-18 17:53:27,822 o.s.h.c.j.MappingJackson2HttpMessageConverter - Failed to evaluate Jackson deserialization for type [[simple type, class com.remiges.adv_java_assignment.entity.Employee]]: com.fasterxml.jackson.databind.exc.InvalidDefinitionException: Cannot handle managed/back reference 'defaultReference': back reference type (`java.util.List<com.remiges.adv_java_assignment.entity.Employee>`) not compatible with managed type (com.remiges.adv_java_assignment.entity.Employee)
+2024-03-18 17:53:27,823 o.s.h.c.j.MappingJackson2HttpMessageConverter - Failed to evaluate Jackson deserialization for type [[simple type, class com.remiges.adv_java_assignment.entity.Employee]]: com.fasterxml.jackson.databind.exc.InvalidDefinitionException: Cannot handle managed/back reference 'defaultReference': back reference type (`java.util.List<com.remiges.adv_java_assignment.entity.Employee>`) not compatible with managed type (com.remiges.adv_java_assignment.entity.Employee)
+2024-03-18 17:53:27,824 o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.web.HttpMediaTypeNotSupportedException: Content-Type 'application/json;charset=UTF-8' is not supported]
+2024-03-18 17:53:58,627 o.s.web.filter.OncePerRequestFilter -  Header :  Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJTdXJhaiIsImlhdCI6MTcxMDc2NDQ1OSwiZXhwIjoxNzEwNzgyNDU5fQ.7YYr79c7Tr1QCr7l8TkH6n0A_vrBlqWFCGm7yujLS_ugFSUkSJOtBlTBdsqiHOxwB18-Lu7kPhmCCmoI5p1HTg
+2024-03-18 17:53:58,631 o.s.h.c.j.MappingJackson2HttpMessageConverter - Failed to evaluate Jackson deserialization for type [[simple type, class com.remiges.adv_java_assignment.entity.Employee]]: com.fasterxml.jackson.databind.exc.InvalidDefinitionException: Cannot handle managed/back reference 'defaultReference': back reference type (`java.util.List<com.remiges.adv_java_assignment.entity.Employee>`) not compatible with managed type (com.remiges.adv_java_assignment.entity.Employee)
+2024-03-18 17:53:58,633 o.s.h.c.j.MappingJackson2HttpMessageConverter - Failed to evaluate Jackson deserialization for type [[simple type, class com.remiges.adv_java_assignment.entity.Employee]]: com.fasterxml.jackson.databind.exc.InvalidDefinitionException: Cannot handle managed/back reference 'defaultReference': back reference type (`java.util.List<com.remiges.adv_java_assignment.entity.Employee>`) not compatible with managed type (com.remiges.adv_java_assignment.entity.Employee)
+2024-03-18 17:53:58,633 o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.web.HttpMediaTypeNotSupportedException: Content-Type 'application/json;charset=UTF-8' is not supported]
+2024-03-18 17:54:30,239 o.s.web.filter.OncePerRequestFilter -  Header :  Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJTdXJhaiIsImlhdCI6MTcxMDc1NzQ5MCwiZXhwIjoxNzEwNzc1NDkwfQ.XaVFkPv2ooGE_6bNXMWFJkvfuW8XzGHXigBGUbHKaFCdbPuOyh87jDl8v2kX__Up162NsNap-8ZmDveCk-fH2A
+2024-03-18 17:56:59,649 o.s.web.filter.OncePerRequestFilter -  Header :  Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJTdXJhaiIsImlhdCI6MTcxMDc2NDQ1OSwiZXhwIjoxNzEwNzgyNDU5fQ.7YYr79c7Tr1QCr7l8TkH6n0A_vrBlqWFCGm7yujLS_ugFSUkSJOtBlTBdsqiHOxwB18-Lu7kPhmCCmoI5p1HTg
+2024-03-18 17:58:20,943 o.s.web.filter.OncePerRequestFilter -  Header :  Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJTdXJhaiIsImlhdCI6MTcxMDc2NDQ1OSwiZXhwIjoxNzEwNzgyNDU5fQ.7YYr79c7Tr1QCr7l8TkH6n0A_vrBlqWFCGm7yujLS_ugFSUkSJOtBlTBdsqiHOxwB18-Lu7kPhmCCmoI5p1HTg
+2024-03-18 17:58:20,946 o.s.h.c.j.MappingJackson2HttpMessageConverter - Failed to evaluate Jackson deserialization for type [[simple type, class com.remiges.adv_java_assignment.entity.Employee]]: com.fasterxml.jackson.databind.exc.InvalidDefinitionException: Cannot handle managed/back reference 'defaultReference': back reference type (`java.util.List<com.remiges.adv_java_assignment.entity.Employee>`) not compatible with managed type (com.remiges.adv_java_assignment.entity.Employee)
+2024-03-18 17:58:20,946 o.s.h.c.j.MappingJackson2HttpMessageConverter - Failed to evaluate Jackson deserialization for type [[simple type, class com.remiges.adv_java_assignment.entity.Employee]]: com.fasterxml.jackson.databind.exc.InvalidDefinitionException: Cannot handle managed/back reference 'defaultReference': back reference type (`java.util.List<com.remiges.adv_java_assignment.entity.Employee>`) not compatible with managed type (com.remiges.adv_java_assignment.entity.Employee)
+2024-03-18 17:58:20,947 o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.web.HttpMediaTypeNotSupportedException: Content-Type 'application/json;charset=UTF-8' is not supported]
