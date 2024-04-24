@@ -1,0 +1,110 @@
+2024-03-21 10:57:20,242 c.r.a.AdvJavaAssignmentApplication - Starting AdvJavaAssignmentApplication using Java 21.0.2 with PID 1576052 (/home/surajg/Downloads/advanced-java-surajg_1/target/classes started by surajg in /home/surajg/Downloads/advanced-java-surajg_1)
+2024-03-21 10:57:20,244 c.r.a.AdvJavaAssignmentApplication - Running with Spring Boot v3.2.3, Spring v6.1.4
+2024-03-21 10:57:20,245 c.r.a.AdvJavaAssignmentApplication - No active profile set, falling back to 1 default profile: "default"
+2024-03-21 10:57:20,814 o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2024-03-21 10:57:20,815 o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-03-21 10:57:20,908 o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 87 ms. Found 4 JPA repository interfaces.
+2024-03-21 10:57:20,925 o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2024-03-21 10:57:20,926 o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2024-03-21 10:57:20,941 o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.remiges.adv_java_assignment.repo.DeptRepo; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2024-03-21 10:57:20,941 o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.remiges.adv_java_assignment.repo.EmployeeRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2024-03-21 10:57:20,941 o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.remiges.adv_java_assignment.repo.EmployeeShadowRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2024-03-21 10:57:20,941 o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.remiges.adv_java_assignment.repo.RankRepo; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2024-03-21 10:57:20,941 o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 8 ms. Found 0 Redis repository interfaces.
+2024-03-21 10:57:21,633 o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2024-03-21 10:57:21,644 o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2024-03-21 10:57:21,647 o.a.catalina.core.StandardService - Starting service [Tomcat]
+2024-03-21 10:57:21,647 o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.19]
+2024-03-21 10:57:21,697 o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2024-03-21 10:57:21,698 o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1417 ms
+2024-03-21 10:57:21,856 c.r.a.s.JwtAuthenticationFilter - Filter 'jwtAuthenticationFilter' configured for use
+2024-03-21 10:57:21,975 o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-03-21 10:57:22,015 org.hibernate.Version - HHH000412: Hibernate ORM core version 6.4.4.Final
+2024-03-21 10:57:22,039 o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2024-03-21 10:57:22,211 o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-03-21 10:57:22,248 com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2024-03-21 10:57:22,550 com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@252d8df6
+2024-03-21 10:57:22,551 com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2024-03-21 10:57:22,573 org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-03-21 10:57:23,313 o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-03-21 10:57:23,367 o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-03-21 10:57:23,678 o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-03-21 10:57:24,120 o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-03-21 10:57:24,443 o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@f8dfcbe, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@4be171d1, org.springframework.security.web.context.SecurityContextHolderFilter@4569b6a9, org.springframework.security.web.header.HeaderWriterFilter@593d5f39, org.springframework.security.web.authentication.logout.LogoutFilter@4dc10682, com.remiges.adv_java_assignment.security.JwtAuthenticationFilter@8641b7d, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@2140de63, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@655008a2, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@76afb9d, org.springframework.security.web.session.SessionManagementFilter@49aa6081, org.springframework.security.web.access.ExceptionTranslationFilter@7746330a, org.springframework.security.web.access.intercept.AuthorizationFilter@6dde03ce]
+2024-03-21 10:57:24,852 o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2024-03-21 10:57:24,865 o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path ''
+2024-03-21 10:57:24,875 c.r.a.AdvJavaAssignmentApplication - Started AdvJavaAssignmentApplication in 4.905 seconds (process running for 5.263)
+2024-03-21 10:57:30,702 o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-03-21 10:57:30,703 o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2024-03-21 10:57:30,703 o.s.web.servlet.DispatcherServlet - Completed initialization in 0 ms
+2024-03-21 10:57:30,714 o.s.web.filter.OncePerRequestFilter -  Header :  null
+2024-03-21 10:57:30,714 o.s.web.filter.OncePerRequestFilter - Invalid Header Value !! 
+2024-03-21 10:57:30,718 c.r.a.utility.LoggingInterceptor - Received request: POST /auth/login
+2024-03-21 10:57:30,928 c.r.a.utility.RequestLoggingAspect - user=<userId>|api=AuthController.login|status=success|error_code=|error_message=|client_reqid=<_reqid>|req=[{"email":"Suraj","password":"Suraj"}]
+2024-03-21 10:57:30,939 c.r.a.utility.LoggingInterceptor - Sending response: 200 application/json
+2024-03-21 10:57:30,939 c.r.a.utility.LoggingInterceptor - Request completed successfully.
+2024-03-21 10:58:37,711 o.s.web.filter.OncePerRequestFilter -  Header :  Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJTdXJhaiIsImlhdCI6MTcxMDk5ODg1MCwiZXhwIjoxNzExMDE2ODUwfQ.SaLK-gAbQ9npxMk8ZLgj8KQi6UXyeaK0K4815kraffFfqBHw-xDvA6B5tIwX01uPneIpa0BDlb-9IifDSOg0Ug
+2024-03-21 10:58:37,730 c.r.a.utility.LoggingInterceptor - Received request: PUT /myhr/employee/update/1
+2024-03-21 10:58:37,740 o.s.h.c.j.MappingJackson2HttpMessageConverter - Failed to evaluate Jackson deserialization for type [[simple type, class com.remiges.adv_java_assignment.entity.Employee]]: com.fasterxml.jackson.databind.exc.InvalidDefinitionException: Cannot handle managed/back reference 'defaultReference': back reference type (`java.util.List<com.remiges.adv_java_assignment.entity.Employee>`) not compatible with managed type (com.remiges.adv_java_assignment.entity.Employee)
+2024-03-21 10:58:37,743 o.s.h.c.j.MappingJackson2HttpMessageConverter - Failed to evaluate Jackson deserialization for type [[simple type, class com.remiges.adv_java_assignment.entity.Employee]]: com.fasterxml.jackson.databind.exc.InvalidDefinitionException: Cannot handle managed/back reference 'defaultReference': back reference type (`java.util.List<com.remiges.adv_java_assignment.entity.Employee>`) not compatible with managed type (com.remiges.adv_java_assignment.entity.Employee)
+2024-03-21 10:58:37,745 o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.web.HttpMediaTypeNotSupportedException: Content-Type 'application/json;charset=UTF-8' is not supported]
+2024-03-21 10:58:37,745 c.r.a.utility.LoggingInterceptor - Request completed successfully.
+2024-03-21 11:02:20,357 o.s.web.filter.OncePerRequestFilter -  Header :  Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJTdXJhaiIsImlhdCI6MTcxMDk5ODg1MCwiZXhwIjoxNzExMDE2ODUwfQ.SaLK-gAbQ9npxMk8ZLgj8KQi6UXyeaK0K4815kraffFfqBHw-xDvA6B5tIwX01uPneIpa0BDlb-9IifDSOg0Ug
+2024-03-21 11:02:20,360 c.r.a.utility.LoggingInterceptor - Received request: PUT /myhr/employee/update/1
+2024-03-21 11:02:20,362 o.s.h.c.j.MappingJackson2HttpMessageConverter - Failed to evaluate Jackson deserialization for type [[simple type, class com.remiges.adv_java_assignment.entity.Employee]]: com.fasterxml.jackson.databind.exc.InvalidDefinitionException: Cannot handle managed/back reference 'defaultReference': back reference type (`java.util.List<com.remiges.adv_java_assignment.entity.Employee>`) not compatible with managed type (com.remiges.adv_java_assignment.entity.Employee)
+2024-03-21 11:02:20,364 o.s.h.c.j.MappingJackson2HttpMessageConverter - Failed to evaluate Jackson deserialization for type [[simple type, class com.remiges.adv_java_assignment.entity.Employee]]: com.fasterxml.jackson.databind.exc.InvalidDefinitionException: Cannot handle managed/back reference 'defaultReference': back reference type (`java.util.List<com.remiges.adv_java_assignment.entity.Employee>`) not compatible with managed type (com.remiges.adv_java_assignment.entity.Employee)
+2024-03-21 11:02:20,364 o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.web.HttpMediaTypeNotSupportedException: Content-Type 'application/json;charset=UTF-8' is not supported]
+2024-03-21 11:02:20,364 c.r.a.utility.LoggingInterceptor - Request completed successfully.
+2024-03-21 11:02:22,688 o.s.web.filter.OncePerRequestFilter -  Header :  Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJTdXJhaiIsImlhdCI6MTcxMDk5ODg1MCwiZXhwIjoxNzExMDE2ODUwfQ.SaLK-gAbQ9npxMk8ZLgj8KQi6UXyeaK0K4815kraffFfqBHw-xDvA6B5tIwX01uPneIpa0BDlb-9IifDSOg0Ug
+2024-03-21 11:02:22,691 c.r.a.utility.LoggingInterceptor - Received request: PUT /myhr/employee/update/1
+2024-03-21 11:02:22,693 o.s.h.c.j.MappingJackson2HttpMessageConverter - Failed to evaluate Jackson deserialization for type [[simple type, class com.remiges.adv_java_assignment.entity.Employee]]: com.fasterxml.jackson.databind.exc.InvalidDefinitionException: Cannot handle managed/back reference 'defaultReference': back reference type (`java.util.List<com.remiges.adv_java_assignment.entity.Employee>`) not compatible with managed type (com.remiges.adv_java_assignment.entity.Employee)
+2024-03-21 11:02:22,694 o.s.h.c.j.MappingJackson2HttpMessageConverter - Failed to evaluate Jackson deserialization for type [[simple type, class com.remiges.adv_java_assignment.entity.Employee]]: com.fasterxml.jackson.databind.exc.InvalidDefinitionException: Cannot handle managed/back reference 'defaultReference': back reference type (`java.util.List<com.remiges.adv_java_assignment.entity.Employee>`) not compatible with managed type (com.remiges.adv_java_assignment.entity.Employee)
+2024-03-21 11:02:22,695 o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.web.HttpMediaTypeNotSupportedException: Content-Type 'application/json;charset=UTF-8' is not supported]
+2024-03-21 11:02:22,695 c.r.a.utility.LoggingInterceptor - Request completed successfully.
+2024-03-21 11:02:24,024 o.s.web.filter.OncePerRequestFilter -  Header :  Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJTdXJhaiIsImlhdCI6MTcxMDk5ODg1MCwiZXhwIjoxNzExMDE2ODUwfQ.SaLK-gAbQ9npxMk8ZLgj8KQi6UXyeaK0K4815kraffFfqBHw-xDvA6B5tIwX01uPneIpa0BDlb-9IifDSOg0Ug
+2024-03-21 11:02:24,027 c.r.a.utility.LoggingInterceptor - Received request: PUT /myhr/employee/update/1
+2024-03-21 11:02:24,030 o.s.h.c.j.MappingJackson2HttpMessageConverter - Failed to evaluate Jackson deserialization for type [[simple type, class com.remiges.adv_java_assignment.entity.Employee]]: com.fasterxml.jackson.databind.exc.InvalidDefinitionException: Cannot handle managed/back reference 'defaultReference': back reference type (`java.util.List<com.remiges.adv_java_assignment.entity.Employee>`) not compatible with managed type (com.remiges.adv_java_assignment.entity.Employee)
+2024-03-21 11:02:24,032 o.s.h.c.j.MappingJackson2HttpMessageConverter - Failed to evaluate Jackson deserialization for type [[simple type, class com.remiges.adv_java_assignment.entity.Employee]]: com.fasterxml.jackson.databind.exc.InvalidDefinitionException: Cannot handle managed/back reference 'defaultReference': back reference type (`java.util.List<com.remiges.adv_java_assignment.entity.Employee>`) not compatible with managed type (com.remiges.adv_java_assignment.entity.Employee)
+2024-03-21 11:02:24,032 o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.web.HttpMediaTypeNotSupportedException: Content-Type 'application/json;charset=UTF-8' is not supported]
+2024-03-21 11:02:24,033 c.r.a.utility.LoggingInterceptor - Request completed successfully.
+2024-03-21 14:11:44,573 o.s.web.filter.OncePerRequestFilter -  Header :  Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJTdXJhaiIsImlhdCI6MTcxMDk5ODg1MCwiZXhwIjoxNzExMDE2ODUwfQ.SaLK-gAbQ9npxMk8ZLgj8KQi6UXyeaK0K4815kraffFfqBHw-xDvA6B5tIwX01uPneIpa0BDlb-9IifDSOg0Ug
+2024-03-21 14:11:44,583 c.r.a.utility.LoggingInterceptor - Received request: POST /auth/login
+2024-03-21 14:11:44,653 c.r.a.utility.RequestLoggingAspect - user=<userId>|api=AuthController.login|status=success|error_code=|error_message=|client_reqid=<_reqid>|req=[{"email":"Suraj","password":"Suraj"}]
+2024-03-21 14:11:44,654 c.r.a.utility.LoggingInterceptor - Sending response: 200 application/json
+2024-03-21 14:11:44,654 c.r.a.utility.LoggingInterceptor - Request completed successfully.
+2024-03-21 14:12:05,471 o.s.web.filter.OncePerRequestFilter -  Header :  Basic U3VyYWo6U3VyYWo=
+2024-03-21 14:12:05,471 o.s.web.filter.OncePerRequestFilter - Invalid Header Value !! 
+2024-03-21 14:12:05,471 c.r.a.utility.LoggingInterceptor - Received request: POST /auth/login
+2024-03-21 14:12:05,540 c.r.a.utility.RequestLoggingAspect - user=<userId>|api=AuthController.login|status=success|error_code=|error_message=|client_reqid=<_reqid>|req=[{"email":"Suraj","password":"Suraj"}]
+2024-03-21 14:12:05,541 c.r.a.utility.LoggingInterceptor - Sending response: 200 application/json
+2024-03-21 14:12:05,541 c.r.a.utility.LoggingInterceptor - Request completed successfully.
+2024-03-21 14:12:08,098 o.s.web.filter.OncePerRequestFilter -  Header :  Basic U3VyYWo6U3VyYWo=
+2024-03-21 14:12:08,098 o.s.web.filter.OncePerRequestFilter - Invalid Header Value !! 
+2024-03-21 14:12:08,099 c.r.a.utility.LoggingInterceptor - Received request: POST /auth/login
+2024-03-21 14:12:08,169 c.r.a.utility.RequestLoggingAspect - user=<userId>|api=AuthController.login|status=success|error_code=|error_message=|client_reqid=<_reqid>|req=[{"email":"Suraj","password":"Suraj"}]
+2024-03-21 14:12:08,171 c.r.a.utility.LoggingInterceptor - Sending response: 200 application/json
+2024-03-21 14:12:08,171 c.r.a.utility.LoggingInterceptor - Request completed successfully.
+2024-03-21 14:12:39,772 o.s.web.filter.OncePerRequestFilter -  Header :  Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJTdXJhaiIsImlhdCI6MTcxMTAxMDUyOCwiZXhwIjoxNzExMDI4NTI4fQ.gyixetrdgobP11D1JxjWyfSJVu9Ft55PK0SdHvb2CS1fzHVAsZDA1ryoz27TQmDOQ-_MN3gx5RjeufnFBBV7xg
+2024-03-21 14:12:39,774 c.r.a.utility.LoggingInterceptor - Received request: POST /redis/add
+2024-03-21 14:12:40,128 c.r.a.utility.RequestLoggingAspect - user=<userId>|api=RedisController.addKey|status=success|error_code=|error_message=|client_reqid=<_reqid>|req=["name","Suraj"]
+2024-03-21 14:12:40,131 c.r.a.utility.LoggingInterceptor - Sending response: 200 null
+2024-03-21 14:12:40,131 c.r.a.utility.LoggingInterceptor - Request completed successfully.
+2024-03-21 14:13:45,089 o.s.web.filter.OncePerRequestFilter -  Header :  Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJTdXJhaiIsImlhdCI6MTcxMTAxMDUyOCwiZXhwIjoxNzExMDI4NTI4fQ.gyixetrdgobP11D1JxjWyfSJVu9Ft55PK0SdHvb2CS1fzHVAsZDA1ryoz27TQmDOQ-_MN3gx5RjeufnFBBV7xg
+2024-03-21 14:13:45,091 c.r.a.utility.LoggingInterceptor - Received request: GET /redis/get
+2024-03-21 14:13:45,094 c.r.a.utility.RequestLoggingAspect - user=<userId>|api=RedisController.getValue|status=success|error_code=|error_message=|client_reqid=<_reqid>|req=["name"]
+2024-03-21 14:13:45,095 c.r.a.utility.LoggingInterceptor - Sending response: 200 application/json
+2024-03-21 14:13:45,095 c.r.a.utility.LoggingInterceptor - Request completed successfully.
+2024-03-21 14:14:14,751 o.s.web.filter.OncePerRequestFilter -  Header :  Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJTdXJhaiIsImlhdCI6MTcxMTAxMDUyOCwiZXhwIjoxNzExMDI4NTI4fQ.gyixetrdgobP11D1JxjWyfSJVu9Ft55PK0SdHvb2CS1fzHVAsZDA1ryoz27TQmDOQ-_MN3gx5RjeufnFBBV7xg
+2024-03-21 14:14:14,753 c.r.a.utility.LoggingInterceptor - Received request: POST /redis/add
+2024-03-21 14:14:14,755 c.r.a.utility.RequestLoggingAspect - user=<userId>|api=RedisController.addKey|status=success|error_code=|error_message=|client_reqid=<_reqid>|req=["1","Suraj"]
+2024-03-21 14:14:14,755 c.r.a.utility.LoggingInterceptor - Sending response: 200 null
+2024-03-21 14:14:14,755 c.r.a.utility.LoggingInterceptor - Request completed successfully.
+2024-03-21 14:14:30,242 o.s.web.filter.OncePerRequestFilter -  Header :  Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJTdXJhaiIsImlhdCI6MTcxMTAxMDUyOCwiZXhwIjoxNzExMDI4NTI4fQ.gyixetrdgobP11D1JxjWyfSJVu9Ft55PK0SdHvb2CS1fzHVAsZDA1ryoz27TQmDOQ-_MN3gx5RjeufnFBBV7xg
+2024-03-21 14:14:30,246 c.r.a.utility.LoggingInterceptor - Received request: GET /redis/get
+2024-03-21 14:14:30,247 c.r.a.utility.RequestLoggingAspect - user=<userId>|api=RedisController.getValue|status=success|error_code=|error_message=|client_reqid=<_reqid>|req=["1"]
+2024-03-21 14:14:30,248 c.r.a.utility.LoggingInterceptor - Sending response: 200 application/json
+2024-03-21 14:14:30,249 c.r.a.utility.LoggingInterceptor - Request completed successfully.
+2024-03-21 14:15:07,725 o.s.web.filter.OncePerRequestFilter -  Header :  null
+2024-03-21 14:15:07,725 o.s.web.filter.OncePerRequestFilter - Invalid Header Value !! 
+2024-03-21 14:15:15,162 o.s.web.filter.OncePerRequestFilter -  Header :  Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJTdXJhaiIsImlhdCI6MTcxMTAxMDUyOCwiZXhwIjoxNzExMDI4NTI4fQ.gyixetrdgobP11D1JxjWyfSJVu9Ft55PK0SdHvb2CS1fzHVAsZDA1ryoz27TQmDOQ-_MN3gx5RjeufnFBBV7xg
+2024-03-21 14:15:15,164 o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'PUT' is not supported]
